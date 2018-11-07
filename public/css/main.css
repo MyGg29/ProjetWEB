@@ -1,0 +1,67 @@
+html{
+    height:100%;
+}
+body{
+    height:100%;
+}
+
+.content{
+    display:grid;
+    width:75%;
+    height:100%;
+    margin: 50px auto auto auto;
+    grid-template-columns: 33% 33% 33%;
+    grid-template-rows: 40% 20%;
+    grid-template-areas: "a a a"
+                         "b c d";
+    grid-column-gap: 10px;
+    grid-row-gap: 50px;
+}
+
+.actuPrincipale{
+    grid-area: a;
+    background-color:red;
+    display:grid;
+    grid-template-columns: 40% 60%;
+    grid-template-areas: "a b";
+}
+
+.imageActuPrincipale{
+    grid-area: a;
+    background-color: blue;
+}
+
+.texteActuPrincipale{
+    grid-area: b;
+}
+
+.actuSecondaire{
+    display:grid;
+    grid-template-rows: 80% 20%;
+    grid-template-areas: "a"
+                         "b";
+}
+
+.imageActuSecondaire{
+    grid-area: a;
+    background-color:olive;
+}
+
+.texteActuSecondaire{
+    grid-area: b;
+}
+
+.item2{
+    grid-area: b;
+    background-color:green;
+}
+
+.item3{
+    grid-area: c;
+    background-color:orange;
+}
+
+.item4{
+    grid-area:d;
+    background-color:yellow;
+}

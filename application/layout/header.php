@@ -9,8 +9,8 @@
     <script src="public/js/jquery-3.3.1.min.js"></script>
     <script src="public/js/popper.min.js"></script>
     <script src="public/js/bootstrap/bootstrap.min.js"></script>
-
+    <!-- Own code -->
     <script src="public/js/main.js"></script>
-    <link rel="stylesheet" type="text/css" media="screen" href="public/js/main.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="public/css/main.css" />
 </head>
 <body>
