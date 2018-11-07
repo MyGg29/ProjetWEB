@@ -1,1 +1,8 @@
-DirectoryIndex public/index.php
+#DirectoryIndex public/index.php
+#RewriteEngine On
+#RewriteCond %{REQUEST_FILENAME} !-d
+#RewriteCond %{REQUEST_FILENAME} !-f
+#RewriteRule ^(.+)$ /public/index.php [QSA,L]
+#RewriteEngine on
+#RewriteRule ^$ /edsa-stellarisen/public [L]
+#RewriteRule (.*) /edsa-stellarisen/Public/$1 [L]

@@ -77,3 +77,18 @@ img{
 .btn-space{
     margin-left:8px;
 }
+
+/* galerie */
+
+.contentGalerie{
+    display:grid;
+    width:75%;
+    height:100%;
+    margin: 50px auto auto auto;
+    grid-template-columns: 33% 33% 33%;
+    grid-template-rows: 40% 20%;
+    grid-template-areas: "a a a"
+                         "b c d";
+    grid-column-gap: 10px;
+    grid-row-gap: 50px;
+}
