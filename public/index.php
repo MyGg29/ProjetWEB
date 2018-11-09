@@ -2,16 +2,40 @@
 <?php include("../application/layout/navbar.php") ?>
 
 <?php 
-
-var_dump($_SERVER['DOCUMENT_ROOT']);
-    $request = $_SERVER["REQUEST_URI"];
-    echo $request;
+    //var_dump($_SERVER['DOCUMENT_ROOT']);
+    $request = strtolower($_SERVER["REQUEST_URI"]);//On met l'uri en minuscule afin d'être plus souple
     switch($request){
         case "/edsa-stellarisen/":
             require("../application/controllers/indexController.php");
             $indexController = new IndexController;
             $indexController->show();
             break;
+        case "/edsa-stellarisen/galerie":
+            require("../application/controllers/galerieController.php");
+            $galerieController = new GalerieController;
+            $galerieController->show();
+            break;
+        case "/edsa-stellarisen/wiki":
+            require("../application/controllers/wikiController.php");
+            $wikiController = new WikiController;
+            $wikiController->show();
+            break;
+        case "/edsa-stellarisen/planetarium":
+            require("../application/controllers/planetController.php");
+            $planetController = new PlanetController;
+            $planetController->show();
+            break;
+        case "/edsa-stellarisen/connexion":
+            require("../application/controllers/loginController.php");
+            $loginController = new LoginController;
+            $loginController->showConnect();
+            break;
+        case "/edsa-stellarisen/inscrire":
+            require("../application/controllers/loginController.php");
+            $loginController = new LoginController;
+            $loginController->showRegister();
+            break;
+        
     }
 
 
