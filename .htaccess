@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 DirectoryIndex public/index.php
 RewriteEngine On
 RewriteCond %{REQUEST_FILENAME} !-d
@@ -6,3 +7,6 @@ RewriteCond %{REQUEST_FILENAME} !-f
 #RewriteEngine on
 #RewriteRule ^$ /edsa-stellarisen/public [L]
 RewriteRule ^(.*)$ public/index.php [L,QSA]
+=======
+DirectoryIndex public/index.php
+>>>>>>> c8aaf6adfe6b66b8a447d156409b8498d60b73a7
