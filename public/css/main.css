@@ -1,44 +1,62 @@
-html{
-    height:100%;
-}
-body{
-    height:100%;
-    background-color: #101E42;
+html {
+    height: 100%;
 }
 
-img{
-    object-fit: cover;
-    width:100%;
-    max-height: 100%;
+body {
+    height: 100%;
+    /*    background-color: #101E42;*/
 }
+
+img {
+    object-fit: cover;
+    /*
+    width:100%;
+    max-height: 100%;*/
+}
+
+h1 {
+    text-align: center;
+}
+
 /* page index */
-.contentIndex{
-    display:grid;
-    width:75%;
-    height:100%;
+
+.contentIndex {
+    display: grid;
+    width: 75%;
+    height: 100%;
     margin: 50px auto auto auto;
     grid-template-columns: 33% 33% 33%;
     grid-template-rows: 40% 20%;
-    grid-template-areas: "a a a"
-                         "b c d";
+    grid-template-areas: "a a a" "b c d";
     grid-column-gap: 10px;
     grid-row-gap: 50px;
 }
 
-.actuPrincipale{
+@media screen and (max-width:500px) {
+    .contentIndex {
+        grid-template-areas: "a" "b" "c" "d";
+        grid-template-columns: 100%;
+        grid-template-rows: 30% 30% 30% 30%;
+        grid-row-gap: 10px;
+    }
+}
+
+.actuPrincipale {
     grid-area: a;
     background-color: white;
-    display:grid;
+    display: grid;
     grid-template-columns: 40% 60%;
+    grid-template-rows: 100%;
     grid-template-areas: "a b";
 }
 
-.imageActuPrincipale{
+.imageActuPrincipale {
     grid-area: a;
     background-color: black;
+    height: 100%;
 }
 
-.texteActuPrincipale{
+.texteActuPrincipale {
     grid-area: b;
     margin-right: 10px;
     margin-left: 10px;
@@ -47,35 +65,36 @@ img{
     text-align: justify;
 }
 
-.actuSecondaire{
-    display:grid;
+.actuSecondaire {
+    display: grid;
     grid-template-rows: 80% 20%;
-    grid-template-areas: "a"
-                         "b";
+    grid-template-columns: 100%;
+    grid-template-areas: "a" "b";
 }
 
-.imageActuSecondaire{
+.imageActuSecondaire {
     grid-area: a;
-    background-color:white;
+    height: 100%;
+    background-color: white;
 }
 
-.texteActuSecondaire{
+.texteActuSecondaire {
     grid-area: b;
 }
 
-.petiteActu1{
+.petiteActu1 {
     grid-area: b;
-    background-color:white;
+    background-color: white;
 }
 
-.petiteActu2{
+.petiteActu2 {
     grid-area: c;
-    background-color:white;
+    background-color: white;
 }
 
-.petiteActu3{
-    grid-area:d;
-    background-color:white;
+.petiteActu3 {
+    grid-area: d;
+    background-color: white;
 }
 
 /* fin page index */
@@ -86,104 +105,102 @@ img{
 
 /* DEBUT DES AJOUTS CSS QUENTIN ---------------------------------------------------- */
 
-@font-face{ /*Définition d'une police personnalisée*/
+@font-face {
+    /*Définition d'une police personnalisée*/
     font-family: 'codystar';
-    src: url('../../public/font/codystar-fontfacekit/webfonts/codystar_regular_macroman/codystar-regular-webfont.eot') format('eot'),
-         url('../../public/font/codystar-fontfacekit/webfonts/codystar_regular_macroman/codystar-regular-webfont.woff') format('woff'),
-         url('../../public/font/codystar-fontfacekit/webfonts/codystar_regular_macroman/codystar-regular-webfont.ttf') format('truetype'),
-         url('../../public/font/codystar-fontfacekit/webfonts/codystar_regular_macroman/codystar-regular-webfont.svg') format('svg');
+    src: url('../../public/font/codystar-fontfacekit/webfonts/codystar_regular_macroman/codystar-regular-webfont.eot') format('eot'), url('../../public/font/codystar-fontfacekit/webfonts/codystar_regular_macroman/codystar-regular-webfont.woff') format('woff'), url('../../public/font/codystar-fontfacekit/webfonts/codystar_regular_macroman/codystar-regular-webfont.ttf') format('truetype'), url('../../public/font/codystar-fontfacekit/webfonts/codystar_regular_macroman/codystar-regular-webfont.svg') format('svg');
 }
 
-.TestQuentin img {
+.logo img {
     float: left;
-
 }
-.TestQuentin h1 {
+
+.logo h1 {
     font-family: 'codystar';
     color: #101E42;
-    /*font-size: 50px;
-    text-align: left;
-    margin-top:5px;
-    margin-right:0px;
-    margin-bottom:0px;
-    margin-left:80px;
-    /* Texte responsive */
-    /*font-size:3.5vw;*/
-
 }
 
-
 /* Responsivité du titre a côté du logo */
+
 @media screen and (min-width: 521px) {
-  div.TestQuentin h1 {
-    font-size: 50px;
-    text-align: left;
-    margin-top:5px;
-    margin-right:0px;
-    margin-bottom:0px;
-    margin-left:80px;
-  }
+    div.logo h1 {
+        font-size: 50px;
+        text-align: left;
+        margin-top: 5px;
+        margin-right: 0px;
+        margin-bottom: 0px;
+        margin-left: 80px;
+    }
 }
 
 @media screen and (max-width: 520px) {
-  div.TestQuentin h1 {
-    font-size: 45px;
-    text-align: left;
-    margin-top:5px;
-    margin-right:0px;
-    margin-bottom:0px;
-    margin-left:80px;
-  }
+    div.logo h1 {
+        font-size: 45px;
+        text-align: left;
+        margin-top: 5px;
+        margin-right: 0px;
+        margin-bottom: 0px;
+        margin-left: 80px;
+    }
 }
 
 @media screen and (max-width: 500px) {
-  div.TestQuentin h1 {
-    font-size: 40px;
-    text-align: left;
-    margin-top:8px;
-    margin-right:0px;
-    margin-bottom:0px;
-    margin-left:80px;
-  }
+    div.logo h1 {
+        font-size: 40px;
+        text-align: left;
+        margin-top: 8px;
+        margin-right: 0px;
+        margin-bottom: 0px;
+        margin-left: 80px;
+    }
 }
 
 @media screen and (max-width: 480px) {
-  div.TestQuentin h1 {
-    font-size: 35px;
-    text-align: left;
-    margin-top:11px;
-    margin-right:0px;
-    margin-bottom:0px;
-    margin-left:80px;
-  }
+    div.logo h1 {
+        font-size: 35px;
+        text-align: left;
+        margin-top: 11px;
+        margin-right: 0px;
+        margin-bottom: 0px;
+        margin-left: 80px;
+    }
 }
 
 @media screen and (max-width: 460px) {
-  div.TestQuentin h1 {
-    font-size: 30px;
-    text-align: left;
-    margin-top:14px;
-    margin-right:0px;
-    margin-bottom:0px;
-    margin-left:80px;
-  }
+    div.logo h1 {
+        font-size: 30px;
+        text-align: left;
+        margin-top: 14px;
+        margin-right: 0px;
+        margin-bottom: 0px;
+        margin-left: 80px;
+    }
 }
 
 @media screen and (max-width: 440px) {
-  div.TestQuentin h1 {
-    font-size: 25px;
-    text-align: left;
-    margin-top:17px;
-    margin-right:0px;
-    margin-bottom:0px;
-    margin-left:80px;
-  }
+    div.logo h1 {
+        font-size: 25px;
+        text-align: left;
+        margin-top: 17px;
+        margin-right: 0px;
+        margin-bottom: 0px;
+        margin-left: 80px;
+    }
 }
 
+@media screen and (max-width: 344px) {
+    div.logo h1 {
+        display: none;
+    }
+    div.logo {
+        margin: auto;
+    }
+}
 
-.TestQuentin a:link {
-    text-decoration:none;
-} 
+.logo a:link {
+    text-decoration: none;
+}
+
 .couleurCI {
     background-color: #101E42 !important;
 }
@@ -193,139 +210,146 @@ img{
 }
 
 /* Couleur jaune du bouton recherche quand passage dessus */
-#boutonRecherche:hover{
+
+#boutonRecherche:hover {
     width: 50px !important;
     background-color: #DFA109 !important;
-
 }
 
 .navbar-collapse {
     margin-left: 100px;
 }
 
-.contentGalerie{
-    display:grid;
-    width:75%;
-    height:100%;
-    margin: 50px auto auto auto;
-    grid-template-columns: 20% 20% 20% 20% 20%;
-    grid-template-rows: 50% 50%;
-    grid-template-areas: "a b c d e f"
-                         "g h i j k l";
-    grid-column-gap: 10px;
-    grid-row-gap: 50px;
-}
-
-.galerieSecondaire{
-    display:grid;
-    grid-template-rows: 80% 20%;
-    grid-template-areas: "a"
-                         "b";
-}
-
-.imageGalerieSecondaire{
-    grid-area: a;
-    background-color:white;
-}
-
-.texteGalerieSecondaire{
-    grid-area: b;
-}
-
-.petiteGalerie1{
-    grid-area: a;
-    background-color:white;
-}
-
-.petiteGalerie2{
-    grid-area: b;
-    background-color:white;
-}
-
-.petiteGalerie3{
-    grid-area: c;
-    background-color:white;
-}
-
-.petiteGalerie4{
-    grid-area: d;
-    background-color:white;
-}
-
-.petiteGalerie5{
-    grid-area: e;
-    background-color:white;
-}
-
 /* Application d'un style 'flottant' à la barre de navigation */
-nav {
 
+nav {
     overflow: hidden !important;
     position: sticky !important;
     top: 0 !important;
     /*z-index: !important;*/
 }
 
+/* FIN DES AJOUTS CSS QUENTIN ---------------------------------------------------- */
+
 /* galerie */
 
 .contentGalerie {
-    display: grid;
     width: 75%;
-    height: 100%;
-    margin: 50px auto auto auto;
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-#block-contain {
-    display: flex;
-    flex-flow: column wrap;
-    max-width: 100%;
+.gridGalerie {
+    column-count: 3;
+    /* ici on mets ce que l'on veux */
+    column-gap: 10px;
 }
 
 .block {
-    padding-right: 20px;
-    padding-top: 20px;
-    padding-left: 20px;
-    padding-bottom: 35px;
-    flex: 1 0 auto;
-    overflow: hidden;
+    display: inline-block;
+    width: 100%;
+    margin-bottom: 10px;
 }
 
 .legend {
-    margin-top:1px;
+    margin-top: 1px;
+    color: red;
+    background-color: white;
     text-align: center;
     border-style: solid;
 }
 
-.overlay {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 100%;
-  width: 100%;
-  opacity: 0;
-  transition: .5s ease;
-  background-color: #008CBA;
+/* fin galerie */
+
+/* wiki */
+
+.contentWiki {
+    width: 75%;
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-.block:hover .overlay {
-  opacity: 1;
+.gridWiki {
+    display: grid;
+    grid-template-columns: repeat(4, 24%);
+    grid-auto-rows: minmax(150px, auto);
+    gap: 10px;
 }
 
-.text {
-  color: white;
-  font-size: 20px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-  text-align: center;
+/* fin wiki */
+
+/* connexion et un peu inscription (pour la grille)*/
+
+.loginContent {
+    width: 50%;
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
+.connectionBox {
+    padding: 20px;
+    border-style: solid;
+    background-color: grey;
+}
 
+.connectionBox>form {
+    margin-right: 25%;
+    margin-left: 25%;
+    margin-bottom: 50px;
+    display: grid;
+    grid-auto-rows: auto;
+    gap: 5px;
+}
 
+.connectionBox>form>label {
+    margin-bottom: 0;
+}
 
-/* FIN DES AJOUTS CSS QUENTIN ---------------------------------------------------- */
+.connectionBox>form>button {
+    width: 33%;
+    margin: auto;
+}
+
+@media screen and (max-width:850px) {
+    .loginContent {
+        width: 100%;
+        margin: 0;
+    }
+    .connectionBox {
+        width: 100%;
+    }
+    .connectionBox>form {
+        width: 100%;
+        margin: auto;
+    }
+    /* default input size is 20, we need to fixe this to be responsive */
+    .connectionBox>form>input {
+        width: 100%;
+    }
+    .connectionBox>form>button {
+        width: 100%;
+        margin: auto;
+    }
+}
+
+/* fin connexion */
+
+/* inscription */
+
+#img-upload {
+    display: none;
+}
+
+#img-upload-preview {
+    width: 100px;
+    height: 100px;
+}
+
+.img-upload-label:hover {
+    cursor: pointer;
+}
+
+/* fin inscription */

@@ -1,9 +1,9 @@
 <?php
-class LoginContoller{
+class LoginController{
     function showConnect(){
-        echo "ljaskljk";
+        include("../application/views/connexion.php");
     }
     function showRegister(){
-        echo "lkjsljlajslkjxaljljxsjxjaxkjl";
+        include("../application/views/inscrire.php");
     }
 }

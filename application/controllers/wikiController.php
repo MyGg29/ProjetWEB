@@ -1,6 +1,6 @@
 <?php 
 class WikiController{
     function show(){
-        echo "heyyyyy";
+        require("../application/views/wiki.php");
     }
 }

@@ -4,11 +4,11 @@ class GalerieController{
     public $legends;
 
     function __construct(){
-        $this->set("1", "https://picsum.photos/200/400", "hello");
-        $this->set("2", "https://picsum.photos/200/300", "hello");
-        $this->set("3", "https://picsum.photos/200/250", "hello");
-        $this->set("4", "https://picsum.photos/200/333", "hello");
-        $this->set("5", "https://picsum.photos/200/333", "hello");
+        $this->set("1", "https://picsum.photos/200/400", "legende !!");
+        $this->set("2", "https://picsum.photos/200/300", "legendeeee");
+        $this->set("3", "https://picsum.photos/200/250", "legenddeeee");
+        $this->set("4", "https://picsum.photos/200/333", "legende");
+        $this->set("5", "https://picsum.photos/200/333", "legendaire");
         $this->set("6", "https://picsum.photos/200/450", "hello");
     }
 
