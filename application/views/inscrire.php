@@ -23,8 +23,8 @@
             <input type="text" name="confirmPassword">
             <label for="sex">Je suis:</label>
             <select name="sex" id="sex">
-                <option value="homme">Homme</option>
-                <option value="femme">Femme</option>
+                <option value="homme">un homme</option>
+                <option value="femme">une femme</option>
                 <option value="Autre">Autre</option>
             </select>
             <label for="dateNaissance">Date de naissance:</label>

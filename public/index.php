@@ -4,6 +4,10 @@
 <?php 
     //var_dump($_SERVER['DOCUMENT_ROOT']);
     $request = strtolower($_SERVER["REQUEST_URI"]);//On met l'uri en minuscule afin d'être plus souple
+    //we remove the get parameters
+    $pieces = explode("?", $request);
+    $request = $pieces[0];
+
     switch($request){
         case "/edsa-stellarisen/":
             require("../application/controllers/indexController.php");
@@ -28,13 +32,29 @@
         case "/edsa-stellarisen/connexion":
             require("../application/controllers/loginController.php");
             $loginController = new LoginController;
-            $loginController->showConnect();
+            $loginControler->showConnect();
             break;
         case "/edsa-stellarisen/inscrire":
             require("../application/controllers/loginController.php");
             $loginController = new LoginController;
             $loginController->showRegister();
             break;
+        case "/edsa-stellarisen/article":
+            require("../application/controllers/articleController.php");
+            $articleController = new ArticleController;
+            if(empty($_GET)){
+                $articleController->showEveryArticles();
+            }
+            if(array_key_exists("id", $_GET)){
+                $articleController->showArticle($_GET["id"]);
+            }
+            break;
+        case "/edsa-stellarisen/planetarium":
+            require("../application/controllers/planetController.php");
+            $planetController = new PlanetController;
+            $planetController -> show();
+            break;
+        
         
     }
 

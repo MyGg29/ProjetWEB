@@ -54,6 +54,7 @@ h1 {
     grid-area: a;
     background-color: black;
     height: 100%;
+    width: 100%;
 }
 
 .texteActuPrincipale {
@@ -75,6 +76,7 @@ h1 {
 .imageActuSecondaire {
     grid-area: a;
     height: 100%;
+    width:100%;
     background-color: white;
 }
 
@@ -252,6 +254,10 @@ nav {
     margin-bottom: 10px;
 }
 
+.block > img {
+    width: 100%;
+}
+
 .legend {
     margin-top: 1px;
     color: red;
@@ -353,3 +359,12 @@ nav {
 }
 
 /* fin inscription */
+
+.contentArticle {
+    width: 75%;
+    margin: auto;
+    border-style:solid;
+    display: grid;
+    grid-template-areas: "a"
+                         "b";
+}

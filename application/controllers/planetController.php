@@ -1,6 +1,6 @@
 <?php 
-class planetController{
+class PlanetController{
     function show(){
-        echo "heyyyyoooo";
+        require("../application/views/planetarium.php");
     }
 }

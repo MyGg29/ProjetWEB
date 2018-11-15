@@ -12,6 +12,8 @@
     <script src="public/js/bootstrap/bootstrap.min.js"></script>
     <!-- Own code -->
     <script src="public/js/main.js"></script>
+<script src="https://code.jquery.com/jquery-1.7.1.min.js" type="text/javascript"></script>
+<script src="ressources/library/virtualsky/virtualsky.js" type="text/javascript"></script>
     <link rel="stylesheet" type="text/css" media="screen" href="public/css/main.css"/>
 </head>
 <body>
