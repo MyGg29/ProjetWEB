@@ -1,5 +1,3 @@
-<?php require("../application/layout/header.php"); ?>
-<?php include("../application/layout/navbar.php") ?>
 
 
   <iframe width="1400" height="600" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://virtualsky.lco.global/embed/?longitude=-119.86286000000001&latitude=34.4326&projection=gnomic&constellations=true&constellationlabels=true&constellationboundaries=true&meteorshowers=true&showstarlabels=true&showorbits=true&ecliptic=true&meridian=true&gridlines_az=true&gridlines_eq=true&gridlines_gal=true&showgalaxy=true&az=125.25855333708353" allowTransparency="true"></iframe>
