@@ -32,7 +32,7 @@
         case "/edsa-stellarisen/connexion":
             require("../application/controllers/loginController.php");
             $loginController = new LoginController;
-            $loginControler->showConnect();
+            $loginController->showConnect();
             break;
         case "/edsa-stellarisen/inscrire":
             require("../application/controllers/loginController.php");

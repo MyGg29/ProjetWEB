@@ -434,7 +434,7 @@ input:checked + .slider:before {
 
 .slider.round:before {
   border-radius: 50%;
-/* fin article */
+}
 
 /* planetarium */
 .contentPlanetarium {
@@ -463,4 +463,5 @@ input:checked + .slider:before {
 #collapse-sidebar{
     grid-column:1/2;
     grid-row:2/3;
+    position:relative;
 }

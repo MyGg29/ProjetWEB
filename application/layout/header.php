@@ -10,10 +10,14 @@
     <script src="public/js/jquery-3.3.1.min.js"></script>
     <script src="public/js/popper.min.js"></script>
     <script src="public/js/bootstrap/bootstrap.min.js"></script>
-    <!-- Own code -->
+    <!--  Own code -->
     <script src="public/js/main.js"></script>
-<script src="https://code.jquery.com/jquery-1.7.1.min.js" type="text/javascript"></script>
-<script src="ressources/library/virtualsky/virtualsky.js" type="text/javascript"></script>
+    <!--virtual sky, à bouger -->
+    <!--[if lt IE 9]><script src="excanvas.min.js"></script><![endif]-->
+    <script src="ressources/library/VirtualSky/stuquery.js"></script>
+    <script src="ressources/library/VirtualSky/virtualsky.js" type="text/javascript"></script>
+    <script src="public/js/planetariumUtils.js" type="text/javascript"></script>
+
     <link rel="stylesheet" type="text/css" media="screen" href="public/css/main.css"/>
 </head>
 <body>
