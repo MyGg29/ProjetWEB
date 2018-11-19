@@ -26,7 +26,7 @@
       </button>
     </form>
      
-    <button type="button" class="btn btn-primary btn-space couleurCI" onclick="window.open('/edsa-stellarisen/connexion')">Connexion</button>
-    <button type="button" class="btn btn-primary btn-space couleurCI" onclick="window.open('/edsa-stellarisen/inscrire')">S'inscrire</button>
+    <a href="/edsa-stellarisen/connexion"><button type="button" class="btn btn-primary btn-space couleurCI">Connexion</button></a>
+    <a href="/edsa-stellarisen/inscrire"><button type="button" class="btn btn-primary btn-space couleurCI">S'inscrire</button></a>
   </div>
 </nav>

@@ -1,5 +1,6 @@
 <div class="contentPlanetarium">
     <div class="sideBar">
+    <!--
         <form class="choixProjection" action="">Choix de projection :
             <br>
             <input type="radio" name="choixProjection" value="polar"> Polar
@@ -17,161 +18,92 @@
             <input type="radio" name="choixProjection" value="gnomic"> Gnomic
             <br>
         </form>
+        -->
         <div class="zoneSwitchs">
             <label class="switch">
-                <input type="checkbox" checked>
+                <input type="checkbox" onclick="update('constellations', this.checked.toString())">
                 <span class="slider round"></span>
             </label> Lignes des constellations
             <br>
             <label class="switch">
-                <input type="checkbox">
+                <input type="checkbox" onclick="update('constellationlabels', this.checked.toString())">
                 <span class="slider round"></span>
             </label> Noms des constellations
             <br>
             <label class="switch">
-                <input type="checkbox">
+                <input type="checkbox" onclick="update('constellationboundaries', this.checked.toString())">
                 <span class="slider round"></span>
             </label> Limites des constellations
             <br>
             <label class="switch">
-                <input type="checkbox">
+                <input type="checkbox" onclick="update('meteorsshowers', this.checked.toString())">
                 <span class="slider round"></span>
             </label> Pluie de météorites
             <br>
             <label class="switch">
-                <input type="checkbox">
+                <input type="checkbox" onclick="update('showstars', this.checked.toString())">
                 <span class="slider round"></span>
-            </label> Noms des étoiles
+            </label> Etoiles
             <br>
             <label class="switch">
-                <input type="checkbox">
+                <input type="checkbox" onclick="update('showorbits', this.checked.toString())">
                 <span class="slider round"></span>
             </label> Orbites
             <br>
             <label class="switch">
-                <input type="checkbox">
+                <input type="checkbox" onclick="update('eliptic', this.checked.toString())">
                 <span class="slider round"></span>
             </label> Ecliptic
             <br>
             <label class="switch">
-                <input type="checkbox">
+                <input type="checkbox" onclick="update('meridian', this.checked.toString())">
                 <span class="slider round"></span>
             </label> Méridien
             <br>
             <label class="switch">
-                <input type="checkbox">
+                <input type="checkbox" onclick="update('gridlines_az', this.checked.toString())">
                 <span class="slider round"></span>
             </label> Grille azimuthale
             <br>
             <label class="switch">
-                <input type="checkbox">
+                <input type="checkbox" onclick="update('gridlines_eq', this.checked.toString())">
                 <span class="slider round"></span>
             </label> Grille équatoriale
             <br>
             <label class="switch">
-                <input type="checkbox">
+                <input type="checkbox" onclick="update('gridlines_gal', this.checked.toString())">
                 <span class="slider round"></span>
             </label> Grille galactique
             <br>
             <label class="switch">
-                <input type="checkbox">
+                <input type="checkbox" onclick="update('showgalaxy', this.checked.toString())">
                 <span class="slider round"></span>
             </label> Galaxie
             <br>
             <label class="switch">
-                <input type="checkbox">
+                <input type="checkbox" onclick="update('live', this.checked.toString())">
                 <span class="slider round"></span>
             </label> Ciel en live
             <br>
         </div>
     </div>
-    <iframe id="sky" class="virtualSky" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://virtualsky.lco.global/embed/?longitude=-119.86286000000001&latitude=34.4326&projection=gnomic&constellations=true&constellationlabels=true&constellationboundaries=true&meteorshowers=true&showstarlabels=true&showorbits=true&ecliptic=true&meridian=true&gridlines_az=true&gridlines_eq=true&gridlines_gal=true&showgalaxy=true&az=125.25855333708353" allowTransparency="true"></iframe>
+
+    
+    <script>
+    $(document).ready(function() {
+        planetarium = S.virtualsky({
+                id: 'starmap1',
+                projection: 'gnomic',
+                constellations: true,
+                constellationlabels : true
+        });
+        $("#collapse-sidebar").click(function(event) {
+            var vir = $("#starmap1");
+            vir.attr("class", (vir.attr("class") == "virtualSky") ? "virtualSkyFull" : "virtualSky") ;
+            vir.resize();
+        })
+    });
+    </script>
+    <div id="starmap1" class="virtualSky"></div>
     <button id="collapse-sidebar">Paramètres</button>
 </div>
-<script>
-    document.getElementById("collapse-sidebar").onclick = function(event) {
-        var vir = document.getElementById("sky");
-        vir.className = (vir.className == "virtualSky") ? "virtualSkyFull" : "virtualSky";
-    }
-</script>
-<!--
-"https://virtualsky.lco.global/embed/?
-
-longitude=-119.86286000000001&
-latitude=34.4326&
-projection=gnomic&
-
-//polar, stereo, lambert, equirectangular, mollweide, planechart, gnomic
-
-constellations=true&
-constellationlabels=true&
-constellationboundaries=true&
-meteorshowers=true&
-showstarlabels=true&
-showorbits=true&
-ecliptic=true&
-meridian=
-true&
-gridlines_az=true&
-gridlines_eq=true&
-gridlines_gal=true&
-showgalaxy=true&
-background=rgba(255,255,255,0)&
-live=true&
-az=309.6831492755458"
--->
-
-<!--
-<label class="selectionAffichagePlanet">
-  <input type="checkbox" id=""> Lignes des constellations
-  <span class="checkmark"></span>
-</label><br>
-<label class="selectionAffichagePlanet">
-  <input type="checkbox" id=""> Noms des constellations
-  <span class="checkmark"></span>
-</label><br>
-<label class="selectionAffichagePlanet">
-  <input type="checkbox" id=""> Limites des constellations
-  <span class="checkmark"></span>
-</label><br>
-<label class="selectionAffichagePlanet">
-  <input type="checkbox" id=""> Pluie de météorites
-  <span class="checkmark"></span>
-</label><br>
-<label class="selectionAffichagePlanet">
-  <input type="checkbox" id=""> Noms des étoiles
-  <span class="checkmark"></span>
-</label><br>
-<label class="selectionAffichagePlanet">
-  <input type="checkbox" id=""> Orbites
-  <span class="checkmark"></span>
-</label><br>
-<label class="selectionAffichagePlanet">
-  <input type="checkbox" id=""> Ecliptic
-  <span class="checkmark"></span>
-</label><br>
-<label class="selectionAffichagePlanet">
-  <input type="checkbox" id=""> Méridien
-  <span class="checkmark"></span>
-</label><br>
-<label class="selectionAffichagePlanet">
-  <input type="checkbox" id=""> Grille azimuthale
-  <span class="checkmark"></span>
-</label><br>
-<label class="selectionAffichagePlanet">
-  <input type="checkbox" id=""> Grille équatoriale
-  <span class="checkmark"></span>
-</label><br>
-<label class="selectionAffichagePlanet">
-  <input type="checkbox" id=""> Grille galactique
-  <span class="checkmark"></span>
-</label><br>
-<label class="selectionAffichagePlanet">
-  <input type="checkbox" id=""> Galaxie
-  <span class="checkmark"></span>
-</label><br>
-<label class="selectionAffichagePlanet">
-  <input type="checkbox" id=""> Ciel en live
-  <span class="checkmark"></span>
-</label><br>
--->
