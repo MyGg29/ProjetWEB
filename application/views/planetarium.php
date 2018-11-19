@@ -1,24 +1,22 @@
 <div class="contentPlanetarium">
     <div class="sideBar">
-    <!--
         <form class="choixProjection" action="">Choix de projection :
             <br>
-            <input type="radio" name="choixProjection" value="polar"> Polar
+            <input type="radio" name="choixProjection" value="polar" onclick="update('projection', 'polar')"> Polar
             <br>
-            <input type="radio" name="choixProjection" value="stereo"> Stereo
+            <input type="radio" name="choixProjection" value="stereo" onclick="update('projection', 'stereo')"> Stereo
             <br>
-            <input type="radio" name="choixProjection" value="lambert"> Lambert
+            <input type="radio" name="choixProjection" value="lambert" onclick="update('projection', 'lambert')"> Lambert
             <br>
-            <input type="radio" name="choixProjection" value="equirectangular"> Equirectangular
+            <input type="radio" name="choixProjection" value="equirectangular" onclick="update('projection', 'equirectangular')"> Equirectangular
             <br>
-            <input type="radio" name="choixProjection" value="mollweide"> Mollweide
+            <input type="radio" name="choixProjection" value="mollweide" onclick="update('projection', 'mollweide')"> Mollweide
             <br>
-            <input type="radio" name="choixProjection" value="planechart"> Planechart
+            <input type="radio" name="choixProjection" value="planechart" onclick="update('projection', 'planechart')"> Planechart
             <br>
-            <input type="radio" name="choixProjection" value="gnomic"> Gnomic
+            <input type="radio" name="choixProjection" value="gnomic" onclick="update('projection', 'gnomic')"> Gnomic
             <br>
         </form>
-        -->
         <div class="zoneSwitchs">
             <label class="switch">
                 <input type="checkbox" onclick="update('constellations', this.checked.toString())">
@@ -93,15 +91,20 @@
     $(document).ready(function() {
         planetarium = S.virtualsky({
                 id: 'starmap1',
-                projection: 'gnomic',
-                constellations: true,
-                constellationlabels : true
-        });
+                projection: 'planechart',
+                constellations: false,
+                constellationlabels : false,
+                gridlines_eq : true,
+                showplanetlabels: false,
+                showstarlabels: true
+        }
+        );
         $("#collapse-sidebar").click(function(event) {
             var vir = $("#starmap1");
             vir.attr("class", (vir.attr("class") == "virtualSky") ? "virtualSkyFull" : "virtualSky") ;
             vir.resize();
         })
+        addEveryPointers();
     });
     </script>
     <div id="starmap1" class="virtualSky"></div>
