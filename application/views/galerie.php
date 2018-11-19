@@ -7,5 +7,9 @@
       include("../application/layout/galerieBlock.php");
     }
   ?>
+	<div>
+		<iframe src="https://www.planete-astronomie.eu/files/rotation-planete/mars.html" frameborder=0 allowtransparency="true"></iframe>
+	</div>
+  
   </div>
 </div>
