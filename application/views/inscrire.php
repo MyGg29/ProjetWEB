@@ -1,7 +1,7 @@
 <div class="loginContent">
     <h1>Inscription</h1>
     <div class="connectionBox">
-        <form action="loginController.php" method="post">
+        <form action="inscrire" enctype="multipart/form-data" method="post">
             <div class="text-center">
                 <img class="rounded-circle" id="img-upload-preview" src="https://picsum.photos/100/100" alt="icon">
             </div>
@@ -9,12 +9,12 @@
                 <label class="img-upload-label" for="img-upload"><u>Choisir un avatar</u></label>
                 <input type="file" name="img-upload" id="img-upload" accept=".png, .jpeg, .jpg">
             </div>
-            <label for="lname">Nom:</label>
-            <input type="text" name="lname">
-            <label for="fname">Prenom:</label>
-            <input type="text" name="fname">
+            <label for="nom">Nom:</label>
+            <input type="text" name="nom">
+            <label for="prenom">Prenom:</label>
+            <input type="text" name="prenom">
             <label for="pseudo">Pseudo:</label>
-            <input type="text" name="Pseudo">
+            <input type="text" name="pseudo">
             <label for="mail">Adresse mail:</label>
             <input type="text" name="mail">
             <label for="password">Mot de passe:</label>
@@ -27,8 +27,8 @@
                 <option value="femme">une femme</option>
                 <option value="Autre">Autre</option>
             </select>
-            <label for="dateNaissance">Date de naissance:</label>
-            <input type="date">
+            <label for="datenaissance">Date de naissance:</label>
+            <input type="date" name="datenaissance">
             <button type="submit">Inscription</button>
         </form>
     </div>
