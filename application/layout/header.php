@@ -18,6 +18,11 @@
     <script src="ressources/library/VirtualSky/virtualsky.js" type="text/javascript"></script>
     <script src="public/js/planetariumUtils.js" type="text/javascript"></script>
 
+    <!-- Pour extraction pdf -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.0.272/jspdf.debug.js"></script>
+
     <link rel="stylesheet" type="text/css" media="screen" href="public/css/main.css"/>
 </head>
 <body>

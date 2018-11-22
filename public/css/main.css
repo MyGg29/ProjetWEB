@@ -229,7 +229,7 @@ nav {
     overflow: hidden !important;
     position: sticky !important;
     top: 0 !important;
-    /*z-index: !important;*/
+    z-index: 1 !important;
 }
 
 /* FIN DES AJOUTS CSS QUENTIN ---------------------------------------------------- */
@@ -245,7 +245,7 @@ nav {
 
 .gridGalerie {
     column-count: 3;
-    /* ici on mets ce que l'on veux */
+    /* ici on mets ce que l'on veut */
     column-gap: 10px;
 }
 
@@ -299,7 +299,7 @@ nav {
 .connectionBox {
     padding: 20px;
     border-style: solid;
-    background-color: grey;
+    background-color: white;
 }
 
 .connectionBox>form {
@@ -464,4 +464,47 @@ input:checked + .slider:before {
     grid-column:1/2;
     grid-row:2/3;
     position:relative;
+}
+
+/* Cartes Wiki */
+
+.card {
+    z-index:-1;
+    /* Indique aux cartes le positionnement sous la barre de navigation lors du scroll */
+}
+
+/* Barre de réseaux sociaux */
+
+.socialbar {
+    width: 130px;
+    position: fixed;
+    z-index: 1;
+    top: 20px;
+    left: 10px;
+    background: #eee;
+    overflow-x: hidden;
+    padding: 8px 0;
+}
+
+.socialbar a {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #2196F3;
+    display: block;
+}
+
+.socialbar a:hover {
+    color: #064579;
+}
+
+.main {
+    margin-left: 140px; /* Same width as the sidebar + left position in px */
+    font-size: 28px; /* Increased text to enable scrolling */
+    padding: 0px 10px;
+}
+
+@media screen and (max-height: 450px) {
+    .socialbar {padding-top: 15px;}
+    .socialbar a {font-size: 18px;}
 }
