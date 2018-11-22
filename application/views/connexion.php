@@ -11,8 +11,11 @@
             <input type="password" name="password">
             <button type="submit">Connexion</button>
         </form>
-        <div class="text-right mt-3">
+        <div class="text-center mt-3">
             <a href="#"><u>Mot de passe oublié ?</u></a>
+        </div>
+        <div class="text-right mt-3">
+            <a href="/edsa-stellarisen/inscrire"><u>Pas de compte ? Inscrivez-vous !</u></a>
         </div>
     </div>
 </div>

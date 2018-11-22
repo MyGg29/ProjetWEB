@@ -7,16 +7,16 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="/edsa-stellarisen/">Accueil <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="/edsa-stellarisen/"><img src="public/icon/home.svg" alt="LogoAccueil" class="navbarLogos" style="width:20px;height:20px;"> Accueil <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="/edsa-stellarisen/galerie">Galerie</a>
+        <a class="nav-link" href="/edsa-stellarisen/galerie"><img src="public/icon/gallery.svg" alt="LogoAccueil" class="navbarLogos" style="width:20px;height:20px;"> Galerie</a>
       </li>
       <li class="nav-item dropdown">
-        <a class="nav-link" href="/edsa-stellarisen/wiki">Wiki</a>
+        <a class="nav-link" href="/edsa-stellarisen/wiki"><img src="public/icon/open-book.svg" alt="LogoAccueil" class="navbarLogos" style="width:20px;height:20px;"> Wiki</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="/edsa-stellarisen/planetarium">Planétarium</a>
+        <a class="nav-link" href="/edsa-stellarisen/planetarium"><img src="public/icon/planetarium.svg" alt="LogoAccueil" class="navbarLogos" style="width:20px;height:20px;"> Planétarium</a>
       </li>
     </ul>
     <form class="form-inline my-2 my-lg-0">
@@ -30,3 +30,4 @@
     <a href="/edsa-stellarisen/inscrire"><button type="button" class="btn btn-primary btn-space couleurCI">S'inscrire</button></a>
   </div>
 </nav>
+

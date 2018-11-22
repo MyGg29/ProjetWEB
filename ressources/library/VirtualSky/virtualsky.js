@@ -285,7 +285,7 @@ function VirtualSky(input){
 	this.grid = { az: false, eq: false, gal: false, step: 30 };	// Display grids
 	this.gal = { 'processed':false, 'lineWidth':0.75 };
 	this.ecliptic = false;				// Display the Ecliptic
-	this.meridian = false;				// Display the Meridian
+	this.meridian = true;				// Display the Meridian
 	this.keyboard = true;				// Allow keyboard controls
 	this.mouse = true;					// Allow mouse controls
 	this.islive = false;				// Update the sky in real time
@@ -308,7 +308,7 @@ function VirtualSky(input){
 	// Projections
 	this.projections = {
 		'polar': {
-			title: 'Polar projection',
+			title: 'Mode de projection : Polaire',
 			azel2xy: function(az,el,w,h){
 				var radius = h/2;
 				var r = radius*((Math.PI/2)-el)/(Math.PI/2);
@@ -318,7 +318,7 @@ function VirtualSky(input){
 			atmos: true
 		},
 		'fisheye':{
-			title: 'Fisheye polar projection',
+			title: 'Mode de projection : Fisheye polar',
 			azel2xy: function(az,el,w,h){
 				var radius = h/2;
 				var r = radius*Math.sin(((Math.PI/2)-el)/2)/0.70710678;	// the field of view is bigger than 180 degrees
@@ -328,7 +328,7 @@ function VirtualSky(input){
 			atmos: true
 		},
 		'ortho':{
-			title: 'Orthographic polar projection',
+			title: 'Mode de projection : Polaire orthographique',
 			azel2xy: function(az,el,w,h){
 				var radius = h/2;
 				var r = radius*Math.cos(el);
@@ -338,7 +338,7 @@ function VirtualSky(input){
 			atmos: true
 		},
 		'stereo': {
-			title: 'Stereographic projection',
+			title: 'Mode de projection : Stéréographique',
 			azel2xy: function(az,el,w,h){
 				var f = 0.42;
 				var sinel1 = 0;
@@ -353,7 +353,7 @@ function VirtualSky(input){
 			atmos: true
 		},
 		'lambert':{
-			title: 'Lambert projection',
+			title: 'Mode de projection : de Lambert (non, pas le prof)',
 			azel2xy: function(az,el,w,h){
 				var cosaz = Math.cos((az-Math.PI));
 				var sinaz = Math.sin((az-Math.PI));
@@ -365,7 +365,7 @@ function VirtualSky(input){
 			atmos: true
 		},
 		'gnomic': {
-			title: 'Gnomic projection',
+			title: 'Mode de projection : Gnomonique',
 			azel2xy: function(az,el){
 				if(el >= 0){
 					var pos = this.azel2radec(az,el);
@@ -418,7 +418,7 @@ function VirtualSky(input){
 			fullsky: true
 		},
 		'equirectangular':{
-			title: 'Equirectangular projection',
+			title: 'Mode de projection : Equirectangulaire',
 			azel2xy: function(az,el,w,h){
 				while(az < 0) az += 2*Math.PI;
 				az = (az)%(Math.PI*2);
@@ -428,7 +428,7 @@ function VirtualSky(input){
 			atmos: true
 		},
 		'mollweide':{
-			title: 'Mollweide projection',
+			title: 'Mode de projection : de Mollweide',
 			radec2xy: function(ra,dec){
 				var dtheta, x, y, coords, sign, outside, normra;
 				var thetap = Math.abs(dec);
@@ -479,7 +479,7 @@ function VirtualSky(input){
 			atmos: false
 		},
 		'planechart':{
-			title: 'Planechart projection',
+			title: 'Mode de projection : Plane',
 			radec2xy: function(ra,dec){
 				ra = inrangeAz(ra);
 				var normra = (ra+this.d2r*this.az_off)%(2*Math.PI)-Math.PI;
@@ -512,7 +512,7 @@ function VirtualSky(input){
 					[5742,4.7,18.437,24.58],[6193,4.7,19.867,27.26],[6537,3.6,21.006,-8.18],[6686,2.7,21.454,60.24],
 					[6867,3.4,22.091,-43.32],[7007,4.8,22.546,6.14],[7083,3.9,22.813,-49.07],[7097,3.6,22.871,15.35],
 					[7588,0.5,24.429,-57.24],[7607,3.6,24.498,48.63],[7884,4.5,25.358,5.49],[8102,3.5,26.017,-15.94],
-					[8198,4.3,26.348,9.16],[8645,3.7,27.865,-10.34],[8796,3.4,28.27,29.58],[8832,3.9,28.383,19.29],
+				[8198,4.3,26.348,9.16],[8645,3.7,27.865,-10.34],[8796,3.4,28.27,29.58],[8832,3.9,28.383,19.29],
 					[8833,4.6,28.389,3.19],[8837,4.4,28.411,-46.3],[8886,3.4,28.599,63.67],[8903,2.6,28.66,20.81],
 					[9007,3.7,28.989,-51.61],[9236,2.9,29.692,-61.57],[9347,4,30.001,-21.08],[9487,3.8,30.512,2.76],
 					[9598,4,30.859,72.42],[9640,2.1,30.975,42.33],[9884,2,31.793,23.46],[10064,3,32.386,34.99],
