@@ -508,3 +508,56 @@ input:checked + .slider:before {
     .socialbar {padding-top: 15px;}
     .socialbar a {font-size: 18px;}
 }
+
+/* Mon compte */ 
+.moncompteContent{
+    width: 50%;
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.moncompteBox {
+    padding: 20px;
+    border-style: solid;
+    background-color: white;
+}
+
+.moncompteBox>form {
+    margin-right: 25%;
+    margin-left: 25%;
+    margin-bottom: 50px;
+    display: grid;
+    grid-auto-rows: auto;
+    gap: 5px;
+}
+
+.moncompteBox>form>label {
+    margin-bottom: 0;
+}
+
+.moncompteBox>form>button {
+    width: 33%;
+    margin: auto;
+}
+
+@media screen and (max-width:850px) {
+    .loginContent {
+        width: 100%;
+        margin: 0;
+    }
+    .connectionBox {
+        width: 100%;
+    }
+    .connectionBox>form {
+        width: 100%;
+        margin: auto;
+    }
+    /* default input size is 20, we need to fixe this to be responsive */
+    .connectionBox>form>input {
+        width: 100%;
+    }
+    .connectionBox>form>button {
+        width: 100%;
+        margin: auto;
+    }
+}

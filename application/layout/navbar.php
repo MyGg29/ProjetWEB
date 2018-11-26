@@ -26,8 +26,18 @@
       </button>
     </form>
      
-    <a href="/edsa-stellarisen/connexion"><button type="button" class="btn btn-primary btn-space couleurCI">Connexion</button></a>
-    <a href="/edsa-stellarisen/inscrire"><button type="button" class="btn btn-primary btn-space couleurCI">S'inscrire</button></a>
+    <a href="/edsa-stellarisen/connexion"><button type="button" class="btn btn-primary btn-space couleurCI"><?php echo empty($_SESSION) ? "Connexion":"Mon Compte"?> </button></a>
+    <?php 
+    if(empty($_SESSION)){ 
+    ?>
+      <a href="/edsa-stellarisen/inscrire"><button type="button" class="btn btn-primary btn-space couleurCI">S'inscrire</button></a>
+    <?php 
+    }
+    else{?>
+      <a href="/edsa-stellarisen/deconnexion"><button type="button" class="btn btn-primary btn-space couleurCI">Deconnexion</button></a>
+    <?php
+    }
+    ?>
   </div>
 </nav>
 

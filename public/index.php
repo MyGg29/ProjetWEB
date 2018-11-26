@@ -1,5 +1,6 @@
+<?php session_start();?>
 <?php require("../application/layout/header.php"); ?>
-<?php include("../application/layout/navbar.php") ?>
+<?php include("../application/layout/navbar.php"); ?>
 
 <?php 
     //var_dump($_SERVER['DOCUMENT_ROOT']);
@@ -32,12 +33,23 @@
         case "/edsa-stellarisen/connexion":
             require("../application/controllers/loginController.php");
             $loginController = new LoginController;
-            $loginController->showConnect();
+            if(empty($_SESSION)){
+                $loginController->showConnect();
+            }
+            else{
+                $loginController->showMyAccount();
+            }
             break;
         case "/edsa-stellarisen/inscrire":
             require("../application/controllers/loginController.php");
             $loginController = new LoginController;
             $loginController->showRegister();
+            break;
+        case "/edsa-stellarisen/deconnexion":
+            require("../application/controllers/loginController.php");
+            $loginController = new LoginController;
+            $loginController->disconnect();
+            header("Location: /edsa-stellarisen/connexion");
             break;
         case "/edsa-stellarisen/article":
             require("../application/controllers/articleController.php");

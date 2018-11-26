@@ -4,12 +4,12 @@
         <div class="text-center">
             <img class="rounded-circle" src="https://picsum.photos/100/100" alt="icon">
         </div>
-        <form action="loginController.php" method="post">
+        <form action="connexion" method="post">
             <label for="mail">Adresse mail:</label>
             <input type="text" name="mail">
             <label for="password">Mot de passe:</label>
             <input type="password" name="password">
-            <button type="submit">Connexion</button>
+            <button type="submit" name="submit">Connexion</button>
         </form>
         <div class="text-center mt-3">
             <a href="#"><u>Mot de passe oublié ?</u></a>

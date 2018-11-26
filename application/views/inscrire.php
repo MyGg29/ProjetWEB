@@ -9,17 +9,33 @@
                 <label class="img-upload-label" for="img-upload"><u>Choisir un avatar</u></label>
                 <input type="file" name="img-upload" id="img-upload" accept=".png, .jpeg, .jpg">
             </div>
-            <label for="nom">Nom:</label>
+            <label for="nom">Nom:*</label>
+            <?php
+             if(array_key_exists("nom",$this->missingfields)){
+                echo "<i>".$this->missingfields["nom"]."</i>";
+            } ?>
             <input type="text" name="nom">
-            <label for="prenom">Prenom:</label>
+            <label for="prenom">Prenom:*</label>
+            <?php if(array_key_exists("prenom",$this->missingfields)){
+                echo $this->missingfields["prenom"];
+            } ?>
             <input type="text" name="prenom">
-            <label for="pseudo">Pseudo:</label>
+            <label for="pseudo">Pseudo:*</label>
+            <?php if(array_key_exists("pseudo",$this->missingfields)){
+                echo $this->missingfields["pseudo"];
+            } ?>
             <input type="text" name="pseudo">
-            <label for="mail">Adresse mail:</label>
+            <label for="mail">Adresse mail:*</label>
+            <?php if(array_key_exists("mail",$this->missingfields)){
+                echo $this->missingfields["mail"];
+            } ?>
             <input type="text" name="mail">
-            <label for="password">Mot de passe:</label>
+            <label for="password">Mot de passe:*</label>
+            <?php if(array_key_exists("password",$this->missingfields)){
+                echo $this->missingfields["password"];
+            } ?>
             <input type="text" name="password">
-            <label for="confirmPassword">Confirmer mot de passe:</label>
+            <label for="confirmPassword">Confirmer mot de passe:*</label>
             <input type="text" name="confirmPassword">
             <label for="sex">Je suis:</label>
             <select name="sex" id="sex">
@@ -29,7 +45,7 @@
             </select>
             <label for="datenaissance">Date de naissance:</label>
             <input type="date" name="datenaissance">
-            <button type="submit">Inscription</button>
+            <button type="submit" name="submit">Inscription</button>
         </form>
         <div class="text-right mt-3">
             <a href="/edsa-stellarisen/connexion"><u>Déjà inscrit ? Connectez-vous !</u></a>
