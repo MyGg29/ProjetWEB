@@ -285,6 +285,22 @@ nav {
     gap: 10px;
 }
 
+@media screen and (max-width:850px) {
+    .gridWiki {
+        grid-template-columns: repeat(3,32%);
+    }
+}
+@media screen and (max-width:750px) {
+    .gridWiki {
+        grid-template-columns: repeat(2,49%);
+    }
+}
+@media screen and (max-width:500px) {
+    .gridWiki {
+        grid-template-columns: repeat(1,99%);
+    }
+}
+
 /* fin wiki */
 
 /* connexion et un peu inscription (pour la grille)*/
@@ -469,7 +485,7 @@ input:checked + .slider:before {
 /* Cartes Wiki */
 
 .card {
-    z-index:-1;
+    /*z-index:-1;*/
     /* Indique aux cartes le positionnement sous la barre de navigation lors du scroll */
 }
 

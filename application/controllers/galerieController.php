@@ -4,7 +4,7 @@ class GalerieController{
     public $legends;
 
     function __construct(){
-        $this->set("1", "https://picsum.photos/200/400", "legende !!");
+        $this->set("1", "public/img/jupiter.jpg", "legende !!");
         $this->set("2", "https://picsum.photos/200/300", "legendeeee");
         $this->set("3", "https://picsum.photos/200/250", "legenddeeee");
         $this->set("4", "https://picsum.photos/200/333", "legende");

@@ -59,7 +59,7 @@ class User {
 
     public function modify($dbh, $id){
       $statement = $dbh->prepare("UPDATE users SET nom=:nom, prenom=:prenom, pseudo=:pseudo, mail=:mail, pseudo=:pseudo, passwordSha256=:passwordSha256 WHERE id=:id");
-      if(isset($this->password)){
+      if(!empty($this->password)){
         $this->passwordSha256 = hash("sha256",$this->password);
       }
       $ok = $statement->execute(['nom' => $this->nom, 'prenom' => $this->prenom,

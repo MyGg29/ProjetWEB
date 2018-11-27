@@ -1,7 +1,7 @@
 <div class="moncompteContent">
     <h1>Mon Compte</h1>
     <div class="moncompteBox">
-        <form action="connexion" enctype="multipart/form-data" method="post">
+        <form action="connexion" enctype="multipart/form-data" autocomplete="off" method="post">
             <div class="text-center">
                 <img class="rounded-circle" id="img-upload-preview" src="<?=$this->avatarPath?>" alt="icon">
             </div>
@@ -18,7 +18,7 @@
             <label for="pseudo">Pseudo:</label>
             <input type="text" name="pseudo" value="<?=$_SESSION["pseudo"]?>">
             <label for="password">Modifier mot de passe:</label>
-            <input type="password" type="password" name="password">
+            <input type="password" type="password"  autocomplete="off" value="" name="password">
             <button type="submit" name="submit">Modifier</button>
         </form>
     </div>
