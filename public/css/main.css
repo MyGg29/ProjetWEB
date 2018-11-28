@@ -381,11 +381,41 @@ nav {
 .contentArticle {
     width: 75%;
     margin: auto;
+    margin-top:10px;
     border-style:solid;
     display: grid;
+    gap:10px;
     grid-template-areas: "a"
-                         "b";
+                         "b"
+                         "c"
+                         "d"
+                         "e";
 }
+
+h1{
+    grid-area:a;
+}
+.iframe {
+    grid-area:b; 
+}
+
+.text {
+    grid-area:c;
+    margin-left:20%;
+    margin-right:20%;
+}
+
+.tags {
+    grid-area:d;
+    border-top: 1px solid black;
+    padding:10px 10px 0px 10px;
+}
+
+.tag{
+    font-size:1.5em;
+    margin:4px;
+}
+
 
 /* Boutons Switch page planétarium ---------------------------------------------------- */
 .switch {

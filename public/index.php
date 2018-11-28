@@ -60,6 +60,10 @@
             if(array_key_exists("id", $_GET)){
                 $articleController->showArticle($_GET["id"]);
             }
+            if(isset($_POST["tagText"]) && isset($_POST["id"])){
+                //handle ajax request to add tags
+                $articleController->addTag($_POST["id"], $_POST["tagText"]);
+            }
             break;
         case "/edsa-stellarisen/planetarium":
             require("../application/controllers/planetController.php");

@@ -5,10 +5,6 @@
             <div class="text-center">
                 <img class="rounded-circle" id="img-upload-preview" src="https://picsum.photos/100/100" alt="icon">
             </div>
-            <div class="text-center">
-                <label class="img-upload-label" for="img-upload"><u>Choisir un avatar</u></label>
-                <input type="file" name="img-upload" id="img-upload" accept=".png, .jpeg, .jpg">
-            </div>
             <label for="nom">Nom:*</label>
             <?php
              if(array_key_exists("nom",$this->missingfields)){
@@ -52,21 +48,3 @@
         </div>
     </div>
 </div>
-<script>
-function readURL(input) {
-
-  if (input.files && input.files[0]) {
-    var reader = new FileReader();
-
-    reader.onload = function(e) {
-      $('#img-upload-preview').attr('src', e.target.result);
-    }
-
-    reader.readAsDataURL(input.files[0]);
-  }
-}
-
-$("#img-upload").change(function() {
-  readURL(this);
-});
-</script>

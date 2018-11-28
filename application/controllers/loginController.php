@@ -44,8 +44,6 @@ class LoginController{
                 $user = new User($_POST);
                 try{
                     $user->insert($dbh);
-                    //we upload the avatar
-                    $this->uploadImage();
                 }
                 catch(Exception $e){
                     $this->missingfields = $user->missingfields;
