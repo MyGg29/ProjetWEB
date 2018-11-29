@@ -106,7 +106,6 @@ h1 {
     margin-left: 8px;
 }
 
-/* DEBUT DES AJOUTS CSS QUENTIN ---------------------------------------------------- */
 
 @font-face {
     /*Définition d'une police personnalisée*/
@@ -232,7 +231,6 @@ nav {
     z-index: 1 !important;
 }
 
-/* FIN DES AJOUTS CSS QUENTIN ---------------------------------------------------- */
 
 /* galerie */
 
@@ -512,12 +510,26 @@ input:checked + .slider:before {
     position:relative;
 }
 
+.dropdown-toggle {
+
+    background-color: #DFA109 !important;
+}
+
 /* Cartes Wiki */
 
-.card {
-    /*z-index:-1;*/
-    /* Indique aux cartes le positionnement sous la barre de navigation lors du scroll */
+.boutonCard {
+    background-color: #101E42 !important;
 }
+
+.card-img-top {
+    height: 15vw !important;
+    width: 100% !important;
+    
+    object-fit: cover;
+    /* Permet de fixer la taille des images des cartes, peut importe le format de l'image */
+}
+
+
 
 /* Barre de réseaux sociaux */
 

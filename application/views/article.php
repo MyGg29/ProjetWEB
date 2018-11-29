@@ -1,7 +1,7 @@
 <div class="contentArticle">
     <h1><?=$this->titreArticle;?></h1>
     <iframe class="iframe" src="<?=$this->iframe?>"></iframe>
-    <div class="text">
+    <div class="text" align="justify">
         <?=$this->texteArticle;?>
     </div>
     <div class="tags">
@@ -13,7 +13,7 @@
             }
         ?>
 
-        <button type="button" data-toggle="modal" data-target="#addTagModal" class="badge badge-warning tag"><span class="badge badge-light">+</span></button>
+        <button type="button" data-toggle="modal" data-target="#addTagModal" class="badge badge-warning tag">Ajouter un tag <span class="badge badge-light">+</span></button>
     </div>
 </div>
 
@@ -22,20 +22,20 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Proposer un tag supplémentaire</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
             <form>
-                <label for="addTagText">Ajouter un label à cet article ! </label>
+                <label for="addTagText">Veuillez indiquer le tag que vous souhaitez soumettre :</label>
                 <input type="text" name="addTagText" id="addTagText">
             </form>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary" data-dismiss="modal" id="saveChanges">Save changes</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal" id="saveChanges">Envoyer !</button>
       </div>
     </div>
   </div>
