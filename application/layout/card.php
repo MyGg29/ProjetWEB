@@ -3,6 +3,6 @@
   <div class="card-body">
     <h5 class="card-title"><?=$this->titre;?></h5>
     <p class="card-text"><?=$this->description;?></p>
-    <a href="article?id=<?=$this->id?>" class="btn btn-primary">Voir l'article</a>
+    <a href="article?id=<?=$this->id?>" class="btn btn-primary boutonCard">Voir l'article</a>
   </div>
 </div>
