@@ -7,13 +7,13 @@ class Article {
     public $iframe;
     
     public function getArticle($dbh,$id){
-        $statement = $dbh->prepare("SELECT id, titre, texte, iframe FROM articles WHERE id = :id");
+        $statement = $dbh->prepare("SELECT id, titre, pathTexte, iframe FROM articles WHERE id = :id");
         $ok = $statement->execute(["id" => $id]);
         if($ok){
             $article = $statement->fetch();
             $this->id = $id;
             $this->titreArticle = $article["titre"];
-            $this->texteArticle = $article["texte"];
+            $this->texteArticle = file_get_contents($article["pathTexte"]);
             $this->iframe = $article["iframe"];
             $tagsStatement = $dbh->prepare("SELECT texte, occurence FROM tags WHERE idArticle = :id");
             $ok = $tagsStatement->execute(["id" => $id]);
