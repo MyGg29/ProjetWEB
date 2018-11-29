@@ -46,7 +46,8 @@
         $("#saveChanges").click(function(){
             var url = new URL(window.location.href);
             var idArticle = url.searchParams.get("id");
-            $.ajax({url: "article", method:"POST", data:{id:idArticle,tagText:$("#addTagText").val()}, success:function(result){
+            var tagText = $("#addTagText").val(); 
+            $.ajax({url: "article", method:"POST", data:{id:idArticle,tagText:tagText}, success:function(result){
                 location.reload();
             }})
         })
