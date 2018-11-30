@@ -1,15 +1,15 @@
 <?php
+require("../application/models/database.php");
 class GalerieController{
     public $imgLinks;
     public $legends;
 
     function __construct(){
-        $this->set("1", "public/img/jupiter.jpg", "legende !!");
-        $this->set("2", "https://picsum.photos/200/300", "legendeeee");
-        $this->set("3", "https://picsum.photos/200/250", "legenddeeee");
-        $this->set("4", "https://picsum.photos/200/333", "legende");
-        $this->set("5", "https://picsum.photos/200/333", "legendaire");
-        $this->set("6", "https://picsum.photos/200/450", "hello");
+        $dbh = Database::connect();
+        $galerie = $dbh->query("SELECT ordre, pathImage, legende FROM galerie");
+        foreach($galerie as $row){
+            $this->set($row["ordre"], $row["pathImage"], $row["legende"]);
+        }
     }
 
     function show(){

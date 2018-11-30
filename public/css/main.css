@@ -624,3 +624,9 @@ input:checked + .slider:before {
         margin: auto;
     }
 }
+
+/* le bouton pdf toujours à gauche en dehors du cadre*/
+.btnPDF{
+    position: absolute;
+    left:0
+}
