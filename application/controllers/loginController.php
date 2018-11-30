@@ -4,6 +4,7 @@ require("../application/models/user.php");
 class LoginController{
 
     public $missingfields = array();
+    public $reussie = false;
     public function showConnect(){
         if(isset($_POST["submit"])){
             $dbh = Database::connect();
@@ -44,6 +45,7 @@ class LoginController{
                 $user = new User($_POST);
                 try{
                     $user->insert($dbh);
+                    $this->reussie = true;
                 }
                 catch(Exception $e){
                     $this->missingfields = $user->missingfields;

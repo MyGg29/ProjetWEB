@@ -8,31 +8,31 @@
             <label for="nom">Nom:*</label>
             <?php
              if(array_key_exists("nom",$this->missingfields)){
-                echo "<i>".$this->missingfields["nom"]."</i>";
+                echo "<i class='text-danger'>".$this->missingfields["nom"]."</i>";
             } ?>
             <input type="text" name="nom">
             <label for="prenom">Prenom:*</label>
             <?php if(array_key_exists("prenom",$this->missingfields)){
-                echo $this->missingfields["prenom"];
+                echo "<i class='text-danger'>".$this->missingfields["prenom"]."</i>";
             } ?>
             <input type="text" name="prenom">
             <label for="pseudo">Pseudo:*</label>
             <?php if(array_key_exists("pseudo",$this->missingfields)){
-                echo $this->missingfields["pseudo"];
+                echo "<i class='text-danger'>".$this->missingfields["pseudo"]."</i>";
             } ?>
             <input type="text" name="pseudo">
             <label for="mail">Adresse mail:*</label>
             <?php if(array_key_exists("mail",$this->missingfields)){
-                echo $this->missingfields["mail"];
+                echo "<i class='text-danger'>".$this->missingfields["mail"]."</i>";
             } ?>
             <input type="text" name="mail">
             <label for="password">Mot de passe:*</label>
             <?php if(array_key_exists("password",$this->missingfields)){
-                echo $this->missingfields["password"];
+                echo "<i class='text-danger'>".$this->missingfields["password"]."</i>";
             } ?>
-            <input type="text" name="password">
+            <input type="password" name="password">
             <label for="confirmPassword">Confirmer mot de passe:*</label>
-            <input type="text" name="confirmPassword">
+            <input type="password" name="confirmPassword">
             <label for="sex">Je suis:</label>
             <select name="sex" id="sex">
                 <option value="homme">Homme</option>
@@ -48,3 +48,31 @@
         </div>
     </div>
 </div>
+
+<!-- le modal pour quand on c'est bien inscrit-->
+<div class="modal fade" tabindex="-1" role="dialog" id="success">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>Vous vous êtes bien inscrit ! Vous pouvez maintenant vous connnecter.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+$(window).load(function(){
+    if(<?= $this->reussie ? 'true' : 'false';?>){
+        $("#success").modal("show");
+    }
+})
+</script>

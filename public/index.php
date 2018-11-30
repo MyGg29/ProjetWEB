@@ -21,9 +21,18 @@
             $galerieController->show();
             break;
         case "/edsa-stellarisen/wiki":
-            require("../application/controllers/wikiController.php");
-            $wikiController = new WikiController;
-            $wikiController->show();
+            if(array_key_exists("search",$_GET)){
+                //search que
+                require("../application/controllers/wikiController.php");
+                $wikiController = new WikiController;
+                $wikiController->findArticle($_GET["search"]);
+            }
+            else{
+                //normal query
+                require("../application/controllers/wikiController.php");
+                $wikiController = new WikiController;
+                $wikiController->show();
+            }
             break;
         case "/edsa-stellarisen/planetarium":
             require("../application/controllers/planetController.php");
@@ -60,7 +69,7 @@
             if(array_key_exists("id", $_GET)){
                 $articleController->showArticle($_GET["id"]);
             }
-            if(isset($_POST["tagText"]) && isset($_POST["id"])){
+            if(array_key_exists("tagText",$_POST) && array_key_exists("id",$_POST)){
                 //handle ajax request to add tags
                 $articleController->addTag($_POST["id"], $_POST["tagText"]);
             }
@@ -70,12 +79,7 @@
             $planetController = new PlanetController;
             $planetController -> show();
             break;
-        
-        
     }
-
-
-
 
 ?>
 

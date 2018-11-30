@@ -2,6 +2,8 @@
 require("../application/models/article.php");
 require("../application/models/database.php");
 class ArticleController {
+    private $dbh;
+
     function showEveryArticles(){
         echo "temp";
     }
@@ -21,4 +23,5 @@ class ArticleController {
         $dbh = Database::connect();
         Article::addTagToArticle($dbh, $id, $tagText);
     }
+
 }
