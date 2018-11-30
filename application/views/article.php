@@ -1,5 +1,7 @@
 <div class="contentArticle">
+  
     <h1><?=$this->titreArticle;?></h1>
+
     <iframe class="iframe" src="<?=$this->iframe?>"></iframe>
     <div class="text" align="justify">
         <?=$this->texteArticle;?>
