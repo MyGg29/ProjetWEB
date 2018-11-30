@@ -394,7 +394,12 @@ h1{
     grid-area:a;
 }
 .iframe {
-    grid-area:b; 
+    grid-area:b;
+
+    height: 15vw;
+    width: 100%;
+    
+    object-fit: cover;
 }
 
 .text {
