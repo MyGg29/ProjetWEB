@@ -18,6 +18,17 @@ h1 {
     text-align: center;
 }
 
+@font-face {
+    /*Définition d'une police personnalisée*/
+    font-family: 'codystar';
+    src: url('../../public/font/codystar-fontfacekit/webfonts/codystar_regular_macroman/codystar-regular-webfont.eot') format('eot'), url('../../public/font/codystar-fontfacekit/webfonts/codystar_regular_macroman/codystar-regular-webfont.woff') format('woff'), url('../../public/font/codystar-fontfacekit/webfonts/codystar_regular_macroman/codystar-regular-webfont.ttf') format('truetype'), url('../../public/font/codystar-fontfacekit/webfonts/codystar_regular_macroman/codystar-regular-webfont.svg') format('svg');
+}
+
+@font-face {
+    /*Définition d'une police personnalisée*/
+    font-family: 'montserrat';
+    src: url('../../public/font/Montserrat/Montserrat-Regular.eot') format('eot'), url('../../public/font/Montserrat/Montserrat-Regular.woff') format('woff'), url('../../public/font/Montserrat/Montserrat-Regular.ttf') format('truetype');
+}
 /* page index */
 
 .contentIndex {
@@ -31,6 +42,7 @@ h1 {
                          "b c d";
     grid-column-gap: 10px;
     grid-row-gap: 50px;
+    font-family: montserrat;
 }
 
 @media screen and (max-width:500px) {
@@ -107,11 +119,6 @@ h1 {
 }
 
 
-@font-face {
-    /*Définition d'une police personnalisée*/
-    font-family: 'codystar';
-    src: url('../../public/font/codystar-fontfacekit/webfonts/codystar_regular_macroman/codystar-regular-webfont.eot') format('eot'), url('../../public/font/codystar-fontfacekit/webfonts/codystar_regular_macroman/codystar-regular-webfont.woff') format('woff'), url('../../public/font/codystar-fontfacekit/webfonts/codystar_regular_macroman/codystar-regular-webfont.ttf') format('truetype'), url('../../public/font/codystar-fontfacekit/webfonts/codystar_regular_macroman/codystar-regular-webfont.svg') format('svg');
-}
 
 .logo img {
     float: left;
@@ -239,6 +246,7 @@ nav {
     margin-top: 10px;
     margin-left: auto;
     margin-right: auto;
+    font-family: montserrat;
 }
 
 .gridGalerie {
@@ -259,7 +267,7 @@ nav {
 
 .legend {
     margin-top: 1px;
-    color: red;
+    color: #101E42;
     background-color: white;
     text-align: center;
     border-style: solid;
@@ -274,6 +282,7 @@ nav {
     margin-top: 10px;
     margin-left: auto;
     margin-right: auto;
+    font-family: montserrat;
 }
 
 .gridWiki {
@@ -308,6 +317,7 @@ nav {
     margin-top: 10px;
     margin-left: auto;
     margin-right: auto;
+    font-family: montserrat;
 }
 
 .connectionBox {
@@ -388,6 +398,7 @@ nav {
                          "c"
                          "d"
                          "e";
+    font-family: montserrat;
 }
 
 h1{
@@ -585,6 +596,7 @@ input:checked + .slider:before {
     margin-top: 10px;
     margin-left: auto;
     margin-right: auto;
+    font-family: montserrat;
 }
 .moncompteBox {
     padding: 20px;

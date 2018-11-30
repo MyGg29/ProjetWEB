@@ -28,6 +28,12 @@ class User {
     //** Insert the object in the given database */
     public function insert($dbh){
       if($this->hasValidData()){
+        $mailAlreadyExists = $dbh->prepare("SELECT COUNT(*) FROM users WHERE mail = :mail");
+        $mailAlreadyExists->execute(["mail" => $mail]);
+        if($mailAlreadyExists->fetch() > 0){
+          $this->missingfields["mail"] = "Cet adresse mail existe déjà !";
+          throw new Exception("This mail already exists");
+        }
         //If the date is not set, we say it's null
         $this->datenaissance = ($this->datenaissance == "") ? null : $this->datenaissance;
         //we hash
@@ -39,11 +45,11 @@ class User {
                                 'mail' => $this->mail, 'sex' => $this->sex, 
                                 'datenaissance' => $this->datenaissance]);
         if(!$ok){
-          throw new Exception("something went wrong in the query");
+          throw new Exception("something went wrong in the query. ".$statement->errorInfo());
         }
       }
       else{
-        throw new Exception("wrong data");
+        throw new Exception("wrong data. ".$statement->errorInfo());
       }
     }
 

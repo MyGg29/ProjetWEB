@@ -6,21 +6,24 @@ class ArticleController {
     private $dbh;
 
     function showEveryArticles(){
-        echo "temp";
+        $this->showArticle(rand(1,10));
     }
 
     function showArticle($id){
         $article = new Article();
         $dbh = Database::connect();
         $article->getArticle($dbh, $id);
-
-        $isFav = User::isArticleFav($dbh,$id, $_SESSION["id"]);
-
         $this->titreArticle = $article->titreArticle;
         $this->texteArticle = $article->texteArticle;
         $this->iframe = $article->iframe;
         $this->tags = $article->tags;
-        $this->isFav = $isFav;
+        $this->isFav = false;
+        //is the user is logged in
+        if(isset($_SESSION["id"])){
+            $isFav = User::isArticleFav($dbh,$id, $_SESSION["id"]);
+            $this->isFav = $isFav;
+        }
+
         include("../application/views/article.php");
     }
 

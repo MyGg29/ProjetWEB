@@ -3,7 +3,7 @@
     <div class="moncompteBox">
         <form action="connexion" enctype="multipart/form-data" autocomplete="off" method="post">
             <div class="text-center">
-                <img class="rounded-circle" id="img-upload-preview" src="<?=$this->avatarPath?>" alt="icon">
+                <img class="rounded-circle" id="img-upload-preview" src="<?=$this->avatarPath?>" alt="Ajouter un avatar maintenant !">
             </div>
             <div class="text-center">
                 <label class="img-upload-label" for="img-upload"><u>Choisir un avatar</u></label>
