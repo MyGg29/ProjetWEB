@@ -403,15 +403,16 @@ h1{
 }
 
 .text {
-    grid-area:c;
+    grid-area:d;
     margin-left:20%;
     margin-right:20%;
 }
 
 .tags {
-    grid-area:d;
+    grid-area:c;
     border-top: 1px solid black;
-    padding:10px 10px 0px 10px;
+    border-bottom: 1px solid black;
+    padding:10px 10px 10px 10px;
 }
 
 .tag{
