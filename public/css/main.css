@@ -395,10 +395,8 @@ h1{
 }
 .iframe {
     grid-area:b;
-
     height: 15vw;
     width: 100%;
-    
     object-fit: cover;
 }
 
@@ -409,10 +407,7 @@ h1{
 }
 
 .tags {
-    grid-area:c;
-    border-top: 1px solid black;
-    border-bottom: 1px solid black;
-    padding:10px 10px 10px 10px;
+    padding:10px;
 }
 
 .tag{
@@ -420,6 +415,20 @@ h1{
     margin:4px;
 }
 
+.favs{
+    object-fit: contain;
+    max-width: 100%;
+    max-height: 70px;
+    padding:10px;
+}
+
+.boutonHaut{
+    grid-area:c;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    display:grid;
+    grid-template-columns: 80% 20%;
+}
 
 /* Boutons Switch page planétarium ---------------------------------------------------- */
 .switch {
@@ -540,18 +549,15 @@ input:checked + .slider:before {
 /* Barre de réseaux sociaux */
 
 .socialbar {
-    width: 130px;
+    width: 40px;
     position: fixed;
     z-index: 1;
-    top: 20px;
-    left: 10px;
+    bottom:0;
     background: #eee;
     overflow-x: hidden;
-    padding: 8px 0;
 }
 
 .socialbar a {
-    padding: 6px 8px 6px 16px;
     text-decoration: none;
     font-size: 25px;
     color: #2196F3;
@@ -628,6 +634,7 @@ input:checked + .slider:before {
 
 /* le bouton pdf toujours à gauche en dehors du cadre*/
 .btnPDF{
-    position: absolute;
-    left:0
+    position: fixed;
+    right:0;
+    bottom:0;
 }

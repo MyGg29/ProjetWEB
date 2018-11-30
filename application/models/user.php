@@ -47,16 +47,6 @@ class User {
       }
     }
 
-    //**check the database if the mail exists in a entry */
-    public static function mailExists($dbh, $mail){
-       $statement = $dbh->prepare("SELECT COUNT(*) FROM users WHERE mail = :mail"); 
-       $ok = $statement->execute(["mail" => $mail]);
-       if($ok){
-         $red = $statement->fetchAll();
-         return $red[0] > 0;
-       }
-    }
-
     public function modify($dbh, $id){
       $statement = $dbh->prepare("UPDATE users SET nom=:nom, prenom=:prenom, pseudo=:pseudo, mail=:mail, pseudo=:pseudo, passwordSha256=:passwordSha256 WHERE id=:id");
       if(!empty($this->password)){
@@ -72,6 +62,38 @@ class User {
         $_SESSION["mail"] = $this->mail;
       }
       return $ok;
+    }
+
+    public static function addFavToUser($dbh, $idArticle, $idUser){
+      $statement = $dbh->prepare("SELECT COUNT(*) FROM userfavoritesfile WHERE idUser = :idUser AND idStarFile = :idArticle");
+      $statement->execute(["idUser" => $idUser, "idArticle" => $idArticle]);
+      $row = $statement->fetch();
+      if($row[0] > 0){
+        $deleteFav = $dbh->prepare("DELETE FROM userfavoritesfile WHERE idUser = :idUser AND idStarFile = :idArticle");
+        $deleteFav->execute(["idUser" => $idUser, "idArticle" => $idArticle]);
+      }
+      else{
+        $addFav = $dbh->prepare("INSERT INTO userfavoritesfile VALUES (:idUser,:idArticle)");
+        $addFav->execute(["idUser" => $idUser, "idArticle" => $idArticle]);
+      }
+    }
+
+    public static function isArticleFav($dbh, $idArticle, $idUser){
+      $statement = $dbh->prepare("SELECT COUNT(*) FROM userfavoritesfile WHERE idUser = :idUser AND idStarFile = :idArticle");
+      $statement->execute(["idUser" => $idUser, "idArticle" => $idArticle]);
+      $row = $statement->fetch();
+      $isFav = $row[0] > 0 ? true : false;
+      return $isFav;
+    }
+
+    //**check the database if the mail exists in a entry */
+    public static function mailExists($dbh, $mail){
+       $statement = $dbh->prepare("SELECT COUNT(*) FROM users WHERE mail = :mail"); 
+       $ok = $statement->execute(["mail" => $mail]);
+       if($ok){
+         $red = $statement->fetchAll();
+         return $red[0] > 0;
+       }
     }
 
     public function hasValidData(){

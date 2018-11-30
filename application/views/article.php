@@ -4,20 +4,23 @@
     <div class="text" align="justify">
         <?=$this->texteArticle;?>
     </div>
-    <div class="tags">
-        <?php
-            foreach($this->tags as $tag){
-                $this->tagName = $tag["texte"];
-                $this->tagOccurence = $tag["occurence"];
-                include("../application/layout/tag.php");
-            }
-        ?>
-
-        <button type="button" data-toggle="modal" data-target="#addTagModal" class="badge badge-warning tag">Ajouter un tag <span class="badge badge-light">+</span></button>
+    <div class="boutonHaut">
+        <div class="tags">
+            <?php
+                foreach($this->tags as $tag){
+                    $this->tagName = $tag["texte"];
+                    $this->tagOccurence = $tag["occurence"];
+                    include("../application/layout/tag.php");
+                }
+            ?>
+            <button type="button" data-toggle="modal" data-target="#addTagModal" class="badge badge-warning tag">Ajouter un tag <span class="badge badge-light">+</span></button>
+        </div>
+        <img class="favs" id="favs" src="public/icon/etoileFavEmpty.svg" alt="ajouter un favoris !"/>
     </div>
 </div>
 
-<!-- Modal -->
+
+<!-- Modal, affiché par le bouton ajouter un tag -->
 <div class="modal fade" id="addTagModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -52,4 +55,27 @@
             }})
         })
     )
+    $(
+        $("#favs").click(function(){
+            var url = new URL(window.location.href);
+            var idArticle = url.searchParams.get("id");
+            $.ajax({url: "article", method:"POST", data:{fav:idArticle}, success:ajouterFav})
+        })
+    )
+    $(function(){
+        if(<?=$this->isFav ? 'true':'false'?>){
+           ajouterFav(); 
+        }
+    })
+
+    function ajouterFav(data){
+        console.log(data);
+        if($("#favs").attr("src") == "public/icon/etoileFavFull.png"){
+            $("#favs").attr("src", "public/icon/etoileFavEmpty.svg");
+        }
+        else{
+            $("#favs").attr("src", "public/icon/etoileFavFull.png");
+        }
+    }
 </script>
+

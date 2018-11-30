@@ -73,6 +73,10 @@
                 //handle ajax request to add tags
                 $articleController->addTag($_POST["id"], $_POST["tagText"]);
             }
+            if(array_key_exists("fav",$_POST)){
+                //handle ajax request to add favs
+                $articleController->addFav($_POST["fav"]);
+            }
             break;
         case "/edsa-stellarisen/planetarium":
             require("../application/controllers/planetController.php");

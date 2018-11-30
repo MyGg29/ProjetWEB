@@ -17,7 +17,7 @@
   ?>
   </div>
 </div>
-
+<?php include("../application/layout/socialbar.php")?>
 <script>
     var doc = new jsPDF('p','pt','a4');
     function extraction(){
