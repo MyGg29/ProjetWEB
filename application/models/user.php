@@ -81,8 +81,10 @@ class User {
         $deleteFav->execute(["idUser" => $idUser, "idArticle" => $idArticle]);
       }
       else{
-        $addFav = $dbh->prepare("INSERT INTO userfavoritesfile VALUES (:idUser,:idArticle)");
+        echo "lkjdaklklajdklajljkcakljsxl";
+        $addFav = $dbh->prepare("INSERT INTO userfavoritesfile (idUser, idStarFile) VALUES (:idUser,:idArticle)");
         $addFav->execute(["idUser" => $idUser, "idArticle" => $idArticle]);
+        var_dump($addFav->errorInfo());
       }
     }
 

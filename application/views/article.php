@@ -73,6 +73,7 @@
     })
 
     function ajouterFav(data){
+        console.log(data);
         if($("#favs").attr("src") == "public/icon/etoileFavFull.png"){
             $("#favs").attr("src", "public/icon/etoileFavEmpty.svg");
         }
