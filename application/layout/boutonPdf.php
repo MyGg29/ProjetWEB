@@ -2,10 +2,11 @@
   <img src="public/icon/pdf.svg" alt="" class="" style="width:50px;height:50px;">
 </button>
 <script>
-    var doc = new jsPDF('p','pt','a4');
-    function extraction(){
-    doc.addHTML(document.body,function(){
-    doc.save('document.pdf');
-    });
+  function extraction() {
+  	var pdf = new jsPDF('p','pt','a4');
+  	pdf.internal.scaleFactor = 3;
+  	pdf.addHTML(document.body,{pagesplit:true},function() {
+      pdf.save('document.pdf');
+  	});
   }
 </script>
