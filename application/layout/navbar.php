@@ -5,7 +5,7 @@
   </button>
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
+    <ul class="navbar-nav ml-auto">
       <li class="nav-item active">
         <a class="nav-link" href="<?=$config["urls"]["baseUrl"]?>"><img src="public/icon/home.svg" alt="LogoAccueil" class="navbarLogos" style="width:20px;height:20px;"> Accueil <span class="sr-only">(current)</span></a>
       </li>

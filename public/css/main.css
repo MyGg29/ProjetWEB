@@ -29,6 +29,7 @@ h1 {
     font-family: 'montserrat';
     src: url('../../public/font/Montserrat/Montserrat-Regular.eot') format('eot'), url('../../public/font/Montserrat/Montserrat-Regular.woff') format('woff'), url('../../public/font/Montserrat/Montserrat-Regular.ttf') format('truetype');
 }
+
 /* page index */
 
 .contentIndex {
@@ -38,8 +39,7 @@ h1 {
     margin: 50px auto auto auto;
     grid-template-columns: 33% 33% 33%;
     grid-template-rows: 40% 20%;
-    grid-template-areas: "a a a" 
-                         "b c d";
+    grid-template-areas: "a a a" "b c d";
     grid-column-gap: 10px;
     grid-row-gap: 50px;
     font-family: montserrat;
@@ -53,6 +53,7 @@ h1 {
         grid-row-gap: 10px;
     }
 }
+
 
 .actuPrincipale {
     grid-area: a;
@@ -89,7 +90,7 @@ h1 {
 .imageActuSecondaire {
     grid-area: a;
     height: 100%;
-    width:100%;
+    width: 100%;
     background-color: white;
 }
 
@@ -112,13 +113,28 @@ h1 {
     background-color: white;
 }
 
+@media screen and (max-width:900px) {
+    .contentIndex {
+        grid-template-areas: "a a a" "b c d";
+        grid-template-columns: 33%;
+        grid-template-rows: auto;
+        grid-row-gap: 30px;
+    }
+    .actuPrincipale {
+        grid-area: a;
+        background-color: white;
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-rows: 50% 50%;
+        grid-template-areas: "a""b";
+    }
+}
+
 /* fin page index */
 
 .btn-space {
     margin-left: 8px;
 }
-
-
 
 .logo img {
     float: left;
@@ -227,15 +243,13 @@ h1 {
 button:hover {
     background-color: #DFA109 !important;
 }
-#boutonRecherche{
-    border-color:#101E42 !important;
+
+#boutonRecherche {
+    border-color: #101E42 !important;
 }
 
-.navbar-collapse {
-    margin-left: 100px;
-}
-.search-field{
-    width:14ch !important;
+.search-field {
+    width: 14ch !important;
 }
 
 /* Application d'un style 'flottant' à la barre de navigation */
@@ -246,7 +260,6 @@ nav {
     top: 0 !important;
     z-index: 1 !important;
 }
-
 
 /* galerie */
 
@@ -270,7 +283,7 @@ nav {
     margin-bottom: 10px;
 }
 
-.block > img {
+.block>img {
     width: 100%;
 }
 
@@ -303,17 +316,19 @@ nav {
 
 @media screen and (max-width:850px) {
     .gridWiki {
-        grid-template-columns: repeat(3,32%);
+        grid-template-columns: repeat(3, 32%);
     }
 }
+
 @media screen and (max-width:750px) {
     .gridWiki {
-        grid-template-columns: repeat(2,49%);
+        grid-template-columns: repeat(2, 49%);
     }
 }
+
 @media screen and (max-width:500px) {
     .gridWiki {
-        grid-template-columns: repeat(1,99%);
+        grid-template-columns: repeat(1, 99%);
     }
 }
 
@@ -333,7 +348,7 @@ nav {
     padding: 20px;
     border-style: solid;
     background-color: #f8f9fa;
-    border-color:#101E42;
+    border-color: #101E42;
 }
 
 .connectionBox>form {
@@ -396,159 +411,161 @@ nav {
 /* fin inscription */
 
 /* article */
+
 .contentArticle {
     width: 75%;
     margin: auto;
-    margin-top:10px;
-    border-style:solid;
+    margin-top: 10px;
+    border-style: solid;
     display: grid;
-    gap:10px;
-    grid-template-areas: "a"
-                         "b"
-                         "c"
-                         "d"
-                         "e";
+    gap: 10px;
+    grid-template-areas: "a" "b" "c" "d" "e";
     font-family: montserrat;
 }
 
-h1{
-    grid-area:a;
-    color:#101E42;
+h1 {
+    grid-area: a;
+    color: #101E42;
 }
+
 .iframe {
-    grid-area:b;
+    grid-area: b;
     height: 15vw;
     width: 100%;
     object-fit: cover;
 }
 
 .text {
-    grid-area:d;
-    margin-left:20%;
-    margin-right:20%;
+    grid-area: d;
+    margin-left: 20%;
+    margin-right: 20%;
 }
 
 .tags {
-    padding:10px;
+    padding: 10px;
 }
 
-.tag{
-    font-size:1.5em;
-    margin:4px;
+.tag {
+    font-size: 1.5em;
+    margin: 4px;
 }
 
-.favs{
+.favs {
     object-fit: contain;
     max-width: 100%;
     max-height: 70px;
-    padding:10px;
+    padding: 10px;
 }
 
-.boutonHaut{
-    grid-area:c;
+.boutonHaut {
+    grid-area: c;
     border-top: 1px solid black;
     border-bottom: 1px solid black;
-    display:grid;
+    display: grid;
     grid-template-columns: 80% 20%;
 }
 
 /* Boutons Switch page planétarium ---------------------------------------------------- */
+
 .switch {
-  position: relative;
-  display: inline-block;
-  width: 45px;
-  height: 25px;
+    position: relative;
+    display: inline-block;
+    width: 45px;
+    height: 25px;
 }
 
 .zoneSwitchs {
     color: #101E42;
 }
 
-.switch input { 
-  opacity: 0;
-  width: 0;
-  height: 0;
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
 }
 
 .slider {
-  position: absolute;
-  cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: #ccc;
-  -webkit-transition: .4s;
-  transition: .4s;
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
 }
 
 .slider:before {
-  position: absolute;
-  content: "";
-  height: 19px;
-  width: 19px;
-  left: 3px;
-  bottom: 3px;
-  background-color: white;
-  /*-webkit-transition: .4s;*/
-  transition: .4s;
+    position: absolute;
+    content: "";
+    height: 19px;
+    width: 19px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    /*-webkit-transition: .4s;*/
+    transition: .4s;
 }
 
-input:checked + .slider {
-  background-color: #DFA109;
+input:checked+.slider {
+    background-color: #DFA109;
 }
 
-input:focus + .slider {
-  box-shadow: 0 0 1px #2196F3;
+input:focus+.slider {
+    box-shadow: 0 0 1px #2196F3;
 }
 
-input:checked + .slider:before {
-  -webkit-transform: translateX(19px);
-  -ms-transform: translateX(19px);
-  transform: translateX(19px);
+input:checked+.slider:before {
+    -webkit-transform: translateX(19px);
+    -ms-transform: translateX(19px);
+    transform: translateX(19px);
 }
 
 /* Rond switch */
+
 .slider.round {
-  border-radius: 25px;
+    border-radius: 25px;
 }
 
 .slider.round:before {
-  border-radius: 50%;
+    border-radius: 50%;
 }
 
 /* planetarium */
+
 .contentPlanetarium {
     width: 100%;
-    height:100%;
-    margin:auto;
-    display:grid;
+    height: 100%;
+    margin: auto;
+    display: grid;
     grid-template-columns: 20% 80%;
     grid-template-rows: 80% 10%;
 }
 
 .sideBar {
     grid-column: 1/2;
-    grid-row:1/2;
-    overflow:scroll;
+    grid-row: 1/2;
+    overflow: scroll;
 }
 
 .virtualSky {
-    grid-column:2/3;
-    grid-row:1/3;
+    grid-column: 2/3;
+    grid-row: 1/3;
 }
+
 .virtualSkyFull {
-    grid-column:1/3;
-    grid-row:1/3;
+    grid-column: 1/3;
+    grid-row: 1/3;
 }
-#collapse-sidebar{
-    grid-column:1/2;
-    grid-row:2/3;
-    position:relative;
+
+#collapse-sidebar {
+    grid-column: 1/2;
+    grid-row: 2/3;
+    position: relative;
 }
 
 .dropdown-toggle {
-
     background-color: #DFA109 !important;
 }
 
@@ -558,6 +575,7 @@ input:checked + .slider:before {
     background-color: #101E42 !important;
     transition: 0.5s;
 }
+
 .boutonCard:hover {
     background-color: #DFA109 !important;
     transition: 0.5s;
@@ -566,12 +584,9 @@ input:checked + .slider:before {
 .card-img-top {
     height: 15vw !important;
     width: 100% !important;
-    
     object-fit: cover;
     /* Permet de fixer la taille des images des cartes, peut importe le format de l'image */
 }
-
-
 
 /* Barre de réseaux sociaux */
 
@@ -579,7 +594,7 @@ input:checked + .slider:before {
     width: 40px;
     position: fixed;
     z-index: 1;
-    bottom:0;
+    bottom: 0;
     background: #eee;
     overflow-x: hidden;
 }
@@ -596,24 +611,32 @@ input:checked + .slider:before {
 }
 
 .main {
-    margin-left: 140px; /* Same width as the sidebar + left position in px */
-    font-size: 28px; /* Increased text to enable scrolling */
+    margin-left: 140px;
+    /* Same width as the sidebar + left position in px */
+    font-size: 28px;
+    /* Increased text to enable scrolling */
     padding: 0px 10px;
 }
 
 @media screen and (max-height: 450px) {
-    .socialbar {padding-top: 15px;}
-    .socialbar a {font-size: 18px;}
+    .socialbar {
+        padding-top: 15px;
+    }
+    .socialbar a {
+        font-size: 18px;
+    }
 }
 
-/* Mon compte */ 
-.moncompteContent{
+/* Mon compte */
+
+.moncompteContent {
     width: 50%;
     margin-top: 10px;
     margin-left: auto;
     margin-right: auto;
     font-family: montserrat;
 }
+
 .moncompteBox {
     padding: 20px;
     border-style: solid;
@@ -660,16 +683,17 @@ input:checked + .slider:before {
     }
 }
 
-.favBox{
-    margin-top:20px;
+.favBox {
+    margin-top: 20px;
     padding: 20px;
     border-style: solid;
     background-color: #f8f9fa;
 }
 
 /* le bouton pdf toujours à gauche en dehors du cadre*/
-.btnPDF{
+
+.btnPDF {
     position: fixed;
-    right:0;
-    bottom:0;
+    right: 0;
+    bottom: 0;
 }
