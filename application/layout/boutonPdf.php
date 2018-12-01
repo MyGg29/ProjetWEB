@@ -5,8 +5,12 @@
   function extraction() {
   	var pdf = new jsPDF('p','pt','a4');
   	pdf.internal.scaleFactor = 3;
-  	pdf.addHTML(document.body,{pagesplit:true},function() {
+  	var options = {
+  		pagesplit: true,
+  	};
+
+  	pdf.addHTML(document.body,options,function() {
       pdf.save('document.pdf');
   	});
-  }
+	}
 </script>
