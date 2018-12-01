@@ -21,7 +21,6 @@
     </div>
 </div>
 
-
 <!-- Modal, affiché par le bouton ajouter un tag -->
 <div class="modal fade" id="addTagModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
@@ -45,6 +44,9 @@
     </div>
   </div>
 </div>
+
+<?php include("../application/layout/socialbar.php")?>
+<?php include("../application/layout/boutonPdf.php")?>
 
 <script>
     $(

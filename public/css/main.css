@@ -224,9 +224,15 @@ h1 {
     width: 50px !important;
     background-color: #DFA109 !important;
 }
+#boutonRecherche{
+    border-color:#101E42 !important;
+}
 
 .navbar-collapse {
     margin-left: 100px;
+}
+.search-field{
+    width:14ch !important;
 }
 
 /* Application d'un style 'flottant' à la barre de navigation */
@@ -323,7 +329,8 @@ nav {
 .connectionBox {
     padding: 20px;
     border-style: solid;
-    background-color: white;
+    background-color: #f8f9fa;
+    border-color:#101E42;
 }
 
 .connectionBox>form {
@@ -403,6 +410,7 @@ nav {
 
 h1{
     grid-area:a;
+    color:#101E42;
 }
 .iframe {
     grid-area:b;

@@ -2300,7 +2300,7 @@ VirtualSky.prototype.drawStars = function(){
 						'dec': this.stars[i][3]*this.r2d,
 						'label': '',
 						'img': 'http://server5.wikisky.org/imgcut?survey=DSS2&img_id=all&angle=2.5&ra=18.66666666666667&de=40&x_shift=-128&y_shift=-128',
-						'url': 'article?id=1',
+						'url': '',
 						'credit': this.htmlDecode(this.starnames[this.stars[i][0]]),
 						'colour': 'rbg(255,255,255)'
 					})
@@ -2424,7 +2424,7 @@ VirtualSky.prototype.drawPlanets = function(){
 			'dec': dec,
 			'label': this.getPhrase('planets',this.planets[p][0]),
 			'img': 'http://server7.sky-map.org/imgcut?survey=DSS2&w=128&h=128&ra=5.58813861333333&de=-5.3911111&angle=1.25&output=PNG',
-			'url': 'article?id=1',
+			'url': 'wiki',
 			'credit':this.getPhrase('planets',this.planets[p][0]),
 			'colour': colour
 		})
