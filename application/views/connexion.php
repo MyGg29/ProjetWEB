@@ -12,7 +12,7 @@
             <button type="submit" name="submit">Connexion</button>
         </form>
         <div class="text-right mt-3">
-            <a href="/edsa-stellarisen/inscrire"><u>Pas de compte ? Inscrivez-vous !</u></a>
+            <a href="<?=$GLOBALS["config"]["urls"]["baseUrl"]?>inscrire"><u>Pas de compte ? Inscrivez-vous !</u></a>
         </div>
     </div>
 </div>

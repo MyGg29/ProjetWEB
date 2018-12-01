@@ -1,6 +1,7 @@
 <?php
-require("../application/models/database.php");
+require_once("../application/models/database.php");
 require("../application/models/user.php");
+require("../application/controllers/wikiController.php");
 class LoginController{
 
     public $missingfields = array();
@@ -26,8 +27,9 @@ class LoginController{
     }
 
     public function showMyAccount(){
+        $dbh = Database::connect(); 
         if(isset($_POST["submit"])){ 
-            $dbh = Database::connect(); 
+            //handle avatar
             $user = new User($_POST); 
             $user->modify($dbh,$_SESSION["id"]);
             if($_FILES["img-upload"]["name"] != ""){
@@ -36,6 +38,15 @@ class LoginController{
         }
         //we add a rand() to trick the browser into reloading the cached image
         $this->avatarPath = "public/userImages/".$_SESSION["avatar"]."?=".rand();
+
+        $favs = $dbh->prepare("SELECT id, titre, description, image FROM wiki INNER JOIN userfavoritesfile AS Ufavs ON wiki.id = Ufavs.idStarFile WHERE Ufavs.idUser = :idUser");
+        $favs->execute(["idUser" => $_SESSION["id"]]);
+        foreach($favs->fetchAll() as $key=>$value){
+            $this->donneeCarte[$value["id"]]["titre"] = $value["titre"];
+            $this->donneeCarte[$value["id"]]["description"] = $value["description"];
+            $this->donneeCarte[$value["id"]]["image"] = $value["image"];
+        }
+
         include("../application/views/moncompte.php");
     }
 

@@ -1,18 +1,24 @@
 <?php 
 class Route {
+    private $config;
+    function __construct($conf){
+        $this->config = $conf;
+    }
+
     function router($request){
+        $baseUrl = $this->config["urls"]["baseUrl"];
         switch($request){
-            case "/edsa-stellarisen/":
+            case $baseUrl:
                 require("../application/controllers/indexController.php");
                 $indexController = new IndexController;
                 $indexController->show();
                 break;
-            case "/edsa-stellarisen/galerie":
+            case $baseUrl."galerie":
                 require("../application/controllers/galerieController.php");
                 $galerieController = new GalerieController;
                 $galerieController->show();
                 break;
-            case "/edsa-stellarisen/wiki":
+            case $baseUrl."wiki":
                 if(array_key_exists("search",$_GET)){
                     //search query
                     require("../application/controllers/wikiController.php");
@@ -26,12 +32,12 @@ class Route {
                     $wikiController->show();
                 }
                 break;
-            case "/edsa-stellarisen/planetarium":
+            case $baseUrl."planetarium":
                 require("../application/controllers/planetController.php");
                 $planetController = new PlanetController;
                 $planetController->show();
                 break;
-            case "/edsa-stellarisen/connexion":
+            case $baseUrl."connexion":
                 require("../application/controllers/loginController.php");
                 $loginController = new LoginController;
                 if(empty($_SESSION)){
@@ -41,18 +47,18 @@ class Route {
                     $loginController->showMyAccount();
                 }
                 break;
-            case "/edsa-stellarisen/inscrire":
+            case $baseUrl."inscrire":
                 require("../application/controllers/loginController.php");
                 $loginController = new LoginController;
                 $loginController->showRegister();
                 break;
-            case "/edsa-stellarisen/deconnexion":
+            case $baseUrl."deconnexion":
                 require("../application/controllers/loginController.php");
                 $loginController = new LoginController;
                 $loginController->disconnect();
-                header("Location: /edsa-stellarisen/connexion");
+                header("Location: ".$baseUrl."connexion");
                 break;
-            case "/edsa-stellarisen/article":
+            case $baseUrl."article":
                 require("../application/controllers/articleController.php");
                 $articleController = new ArticleController;
                 if(empty($_GET)){
@@ -70,7 +76,7 @@ class Route {
                     $articleController->addFav($_POST["fav"]);
                 }
                 break;
-            case "/edsa-stellarisen/planetarium":
+            case $baseUrl."planetarium":
                 require("../application/controllers/planetController.php");
                 $planetController = new PlanetController;
                 $planetController -> show();

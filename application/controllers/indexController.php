@@ -1,5 +1,9 @@
 <?php
 class IndexController{
+    function __construct($conf){
+        $this->config = $conf;
+    }
+
     function show(){
         $this->pathBigImage = "public/img/InSight.PNG";
         $this->titleBigNews = "NASA InSight sur Mars !";

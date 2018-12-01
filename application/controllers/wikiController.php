@@ -1,5 +1,5 @@
 <?php 
-require("../application/models/database.php");
+require_once("../application/models/database.php");
 class WikiController{
     function show(){
         $dbh = Database::connect();

@@ -44,13 +44,13 @@
             <button type="submit" name="submit">Inscription</button>
         </form>
         <div class="text-right mt-3">
-            <a href="/edsa-stellarisen/connexion"><u>Déjà inscrit ? Connectez-vous !</u></a>
+            <a href="<?=$GLOBALS["config"]["urls"]["baseUrl"]?>connexion"><u>Déjà inscrit ? Connectez-vous !</u></a>
         </div>
     </div>
 </div>
 
 <!-- le modal pour quand on c'est bien inscrit-->
-<div class="modal fade" tabindex="-1" role="dialog" id="success">
+<div class="modal" tabindex="-1" role="dialog" id="success">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -60,10 +60,10 @@
         </button>
       </div>
       <div class="modal-body">
-        <p>Vous vous êtes bien inscrit ! Vous pouvez maintenant vous connnecter.</p>
+        <p>Vous vous êtes bien inscrit ! Vous pouvez maintenant vous connecter.</p>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+        <button type="button" class="btn btn-secondary" id="fermer" data-dismiss="modal">Fermer</button>
       </div>
     </div>
   </div>
@@ -72,7 +72,9 @@
 <script>
 $(window).load(function(){
     if(<?= $this->reussie ? 'true' : 'false';?>){
-        $("#success").modal("show");
+        $("#success").show();
     }
 })
+
+$(()=>$("#fermer").click(()=>$("#success").hide()));
 </script>

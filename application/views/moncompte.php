@@ -22,6 +22,18 @@
             <button type="submit" name="submit">Modifier</button>
         </form>
     </div>
+    <div class="favBox">
+        <h1>Mes favoris</h1>
+        <?php
+        foreach($this->donneeCarte as $key=>$value){
+            $this->id = $key;
+            $this->titre = $value["titre"];
+            $this->description = $value["description"];
+            $this->image = $value["image"];
+            include("../application/layout/card.php");
+        }
+        ?>
+    </div>
 </div>
 <script>
 function readURL(input) {

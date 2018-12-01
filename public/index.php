@@ -1,7 +1,7 @@
 <?php session_start();?>
+<?php require("../application/configs/configs.php"); ?>
 <?php require("../application/layout/header.php"); ?>
-<?php include("../application/layout/navbar.php"); ?>
-
+<?php require("../application/layout/navbar.php"); ?>
 <?php 
     //var_dump($_SERVER['DOCUMENT_ROOT']);
     $request = strtolower($_SERVER["REQUEST_URI"]);//On met l'uri en minuscule afin d'être plus souple
@@ -10,7 +10,7 @@
     $request = $pieces[0];
 
     require("../application/controllers/routeController.php");
-    $routeur = new Route;
+    $routeur = new Route($config);
     $routeur->router($request);
 ?>
 

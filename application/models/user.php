@@ -14,7 +14,8 @@ class User {
     private $passwordSha256;
     private $password;
     private $confirmPassword;
-    private $mail;    private $sex;
+    private $mail;    
+    private $sex;
     private $datenaissance;
     private $avatar;
     private $missingfields = array();
@@ -29,8 +30,9 @@ class User {
     public function insert($dbh){
       if($this->hasValidData()){
         $mailAlreadyExists = $dbh->prepare("SELECT COUNT(*) FROM users WHERE mail = :mail");
-        $mailAlreadyExists->execute(["mail" => $mail]);
-        if($mailAlreadyExists->fetch() > 0){
+        $mailAlreadyExists->execute(["mail" => $this->mail]);
+        $row = $mailAlreadyExists->fetch();
+        if($row[0] > 0){
           $this->missingfields["mail"] = "Cet adresse mail existe déjà !";
           throw new Exception("This mail already exists");
         }
@@ -98,6 +100,7 @@ class User {
        $ok = $statement->execute(["mail" => $mail]);
        if($ok){
          $red = $statement->fetchAll();
+         $var_dump($red);
          return $red[0] > 0;
        }
     }
