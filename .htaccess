@@ -1,4 +1,7 @@
+#Modifie la location de la d'index (le point d'entrée).
+#Maintenant on / redirge vers /public/index.php et pas /index.php
 DirectoryIndex public/index.php
+#Redirige tout sur /public/index.php
 RewriteEngine On
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME} !-f
