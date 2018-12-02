@@ -62,7 +62,7 @@ class Route {
                 require("../application/controllers/articleController.php");
                 $articleController = new ArticleController;
                 if(empty($_GET)){
-                    $articleController->showEveryArticles();
+                    $articleController->showRandomArticles();
                 }
                 if(array_key_exists("id", $_GET)){
                     $articleController->showArticle($_GET["id"]);

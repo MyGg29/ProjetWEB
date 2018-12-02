@@ -5,7 +5,7 @@ require("../application/models/user.php");
 class ArticleController {
     private $dbh;
 
-    function showEveryArticles(){
+    function showRandomArticles(){
         $this->showArticle(rand(1,10));
     }
 

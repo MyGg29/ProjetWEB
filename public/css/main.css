@@ -113,6 +113,13 @@ h1 {
     background-color: white;
 }
 
+.actuLinks {
+    color:inherit;
+}
+.actuLinks:hover {
+    color:inherit;
+}
+
 @media screen and (max-width:900px) {
     .contentIndex {
         grid-template-areas: "a a a" "b c d";
