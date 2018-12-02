@@ -14,9 +14,8 @@ Must see si vous avez des problèmes d'affichage :-)
 
 `/application` --> tout ce qui est en lien avec le mvc
 
-`/application/configs` --> l'endroit ou ce site le fichier de config. A modifier en fonction de l'installation
+`/application/configs` --> l'endroit ou se situe le fichier de config. A modifier en fonction de l'installation
 
 `/public/userImages/` --> les images avatars des utilisateurs : le nom de l'image est le même que l'id de l'utilisateur
 
 `/public/index.php` --> le point d'entré. Là ou le routeur redirige tout en fonction de l'url entrée. **Grace au .htaccess, toute les requètes passent par ici**.
-
