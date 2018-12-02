@@ -9,7 +9,7 @@
             <input type="text" name="mail">
             <label for="password">Mot de passe:</label>
             <input type="password" name="password">
-            <button type="submit" name="submit">Connexion</button>
+            <button class="btn btn-primary btn-space couleurCI" type="submit" name="submit">Connexion</button>
         </form>
         <div class="text-right mt-3">
             <a href="<?=$GLOBALS["config"]["urls"]["baseUrl"]?>inscrire"><u>Pas de compte ? Inscrivez-vous !</u></a>

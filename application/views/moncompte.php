@@ -25,12 +25,17 @@
     <div class="favBox">
         <h1>Mes favoris</h1>
         <?php
-        foreach($this->donneeCarte as $key=>$value){
-            $this->id = $key;
-            $this->titre = $value["titre"];
-            $this->description = $value["description"];
-            $this->image = $value["image"];
-            include("../application/layout/card.php");
+        if(isset($this->donneeCarte)){
+            foreach($this->donneeCarte as $key=>$value){
+                $this->id = $key;
+                $this->titre = $value["titre"];
+                $this->description = $value["description"];
+                $this->image = $value["image"];
+                include("../application/layout/card.php");
+            }
+        }
+        else{
+            echo "Aucun favoris pour l'instant !";
         }
         ?>
     </div>

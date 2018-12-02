@@ -41,7 +41,7 @@
             </select>
             <label for="datenaissance">Date de naissance:</label>
             <input type="date" name="datenaissance">
-            <button type="submit" name="submit">Inscription</button>
+            <button class="btn btn-primary btn-space couleurCI" type="submit" name="submit">Inscription</button>
         </form>
         <div class="text-right mt-3">
             <a href="<?=$GLOBALS["config"]["urls"]["baseUrl"]?>connexion"><u>Déjà inscrit ? Connectez-vous !</u></a>
